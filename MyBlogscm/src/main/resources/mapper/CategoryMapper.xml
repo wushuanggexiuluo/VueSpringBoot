@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scm.myblog.mapper.CategoryMapper">
+    <select id="getIdByTagName" resultType="Long">
+        SELECT category_id FROM category where BINARY category_name=#{categoryName}
+    </select>
+    <select id="getAllTagPage" resultType="com.scm.myblog.entity.Category">
+        SELECT *
+        FROM category
+        where category_name LIKE concat('%', #{categoryName}, '%')
+          and category_description LIKE concat('%', #{categoryDescription}, '%') LIMIT #{currentPage}
+            , #{pageSize}
+    </select>
+    <select id="getAllTagCount" resultType="Integer">
+        SELECT COUNT(category_id)
+        FROM category
+        where category_name LIKE concat('%', #{categoryName}, '%')
+          and category_description LIKE concat('%', #{categoryDescription}, '%')
+</select>
+</mapper>

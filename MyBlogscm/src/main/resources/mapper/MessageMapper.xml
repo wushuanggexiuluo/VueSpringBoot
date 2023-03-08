@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scm.myblog.mapper.MessageMapper">
+    <select id="getAllMessagePage" resultType="com.scm.myblog.entity.Message">
+        SELECT *
+        FROM message
+        where message_author_name LIKE concat('%', #{messageAuthorName}, '%')
+          and message_author_email LIKE concat('%', #{messageAuthorEmail}, '%')
+          and message_content LIKE concat('%', #{messageContent}, '%')
+            LIMIT #{currentPage}
+            , #{pageSize}
+    </select>
+    <select id="getAllMessageCount" resultType="Integer">
+        SELECT COUNT(message_author_name)
+        FROM message
+        where message_author_name LIKE concat('%', #{messageAuthorName}, '%')
+          and message_author_email LIKE concat('%', #{messageAuthorEmail}, '%')
+          and message_content LIKE concat('%', #{messageContent}, '%')    </select>
+</mapper>

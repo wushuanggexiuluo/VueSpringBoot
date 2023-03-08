@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scm.myblog.mapper.LinkMapper">
+    <select id="getAllLinkPage" resultType="com.scm.myblog.entity.Link">
+        SELECT *
+        FROM link
+        where link_owner_nickname LIKE concat('%', #{linkOwnerNickname}, '%')
+          and link_name LIKE concat('%', #{linkName}, '%')
+            LIMIT #{currentPage}
+            , #{pageSize}
+    </select>
+    <select id="getAllLinkCount" resultType="Integer">
+    SELECT count(link_id)
+    FROM link
+    where link_owner_nickname LIKE concat('%', #{linkOwnerNickname}, '%')
+      and link_name LIKE concat('%', #{linkName}, '%')
+      </select>
+</mapper>
