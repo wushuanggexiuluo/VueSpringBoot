@@ -9,7 +9,9 @@
 ->2) 进入MyBlogscm/src/main/java/com/scm/myblog/utils/QiniuCloudUtil.java文件，修改文件中的七牛云配置 (可参考 https://blog.csdn.net/qq_53679247/article/details/127748726，https://blog.csdn.net/qq_53679247/article/details/127747471) 不想改也可以使用我默认的（也就是我自己的，别搞破坏就行了，谢谢）
 
 如何启动项目？ 在以上步骤全部完成后才能进行以下步骤 
-1 前端文件夹夹执行命令 vue run serve 
+1 前端文件夹夹执行命令
+ npm install
+ vue run serve 
 2 后端下载pom.xml中的依赖（使用maven） 
 3 启动项目即可，通过访问localhost:8080即可进入网页 
 
