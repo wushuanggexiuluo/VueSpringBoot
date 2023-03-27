@@ -13,6 +13,9 @@ Vue2+Redis5.8+Mysql5.8+Springboot2.7
 #### 在线演示地址
 www.forevergtt.love
 
+#### 吐槽以下
+不要学这位小弟弟（223.73.132.23，广东佛山的小弟弟）乱删我的文件，谢谢！
+
 #### 项目截图
 ![输入图片说明](https://foruda.gitee.com/images/1678268357952724242/d87cb624_10104977.png "屏幕截图")
 
