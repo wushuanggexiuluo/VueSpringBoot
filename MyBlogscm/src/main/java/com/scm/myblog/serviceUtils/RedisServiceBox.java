@@ -91,7 +91,6 @@ public class RedisServiceBox {
         if (!Objects.equals(s, "1")) {
             //从数据库拿到所有的点赞数据
             List<DPLDataBo> aLlDataBo = UserBlogUtils.getALlDataBoFromDb();
-            System.out.println(aLlDataBo);
             //放入redis，其中id为key,其他数据为值
             for (DPLDataBo d : aLlDataBo) {
                 rt.opsForList().leftPushAll(
@@ -291,7 +290,6 @@ public class RedisServiceBox {
         assert keys != null;
         for (String key : keys) {
             List<String> range = rt.opsForList().range(key, 0, -1);
-            System.out.println(range);
             DPLDataBo d = new DPLDataBo();
             d.setArticleId(RedisServiceBox.GetArticleTrueIdOnRedis(key));
             assert range != null;

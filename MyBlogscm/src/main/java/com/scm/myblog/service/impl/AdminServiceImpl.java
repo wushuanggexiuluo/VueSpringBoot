@@ -67,14 +67,12 @@ public class AdminServiceImpl implements AdminService {
     public Result addArticle(ArticleDto articleDto, HttpServletRequest rq) {
         Long isE= UserBlogUtils.getIdByTitle(articleDto.getArticleTitle());
         if (isE == null) {
-            Object url1 = rq.getSession().getAttribute("url");
             Article article=new Article();
             //插入
             //属性copy
             BeanUtils.copyProperties(articleDto,article);
-            article.setArticleThImg((String)url1);
+            System.out.println("略缩图为："+article.getArticleThImg());
             int i = articleMapper.insert(article);
-
             //过滤标签
             ArticleDto articleDto1 = AdminBlogUtils.filterTaggers(articleDto);
             //----插入标签表-----
@@ -103,7 +101,6 @@ public class AdminServiceImpl implements AdminService {
      * @return {@link Result}
      */
     public Result updateArticles(ArticleDto articleDto,HttpServletRequest rq) {
-        Object url = rq.getSession().getAttribute("url");
         //过滤标签
         ArticleDto articleDto1 = AdminBlogUtils.filterTaggers(articleDto);
         //----插入标签表-----
@@ -111,9 +108,7 @@ public class AdminServiceImpl implements AdminService {
         //属性copy
         Article article = new Article();
         BeanUtils.copyProperties(articleDto, article);
-        if(url!=null) {
-            article.setArticleThImg((String) url);
-        }//通过老标题获取id
+        //通过老标题获取id
         Long artId = UserBlogUtils.getIdByTitle(articleDto.getOldarticleTitle());
         //----更新文章表-----
         AdminBlogUtils.updateArticle(article,artId);

@@ -98,6 +98,4 @@ public class AdminArticleController
     public Result removeArticles(@RequestBody  @ApiParam("文章id数组的形式")  Long[] arrIDs){
         return adminService.removeArticles(arrIDs);
     }
-
-
 }

@@ -11,9 +11,9 @@ spring:
         max-idle: 500
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://172.17.0.2:3306/你的数据库名?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: 你的用户名
-    password: 你的密码
+    url: jdbc:mysql://172.17.0.2:3306/yyy?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: yyy
+    password: scm13503905942
     type: com.alibaba.druid.pool.DruidDataSource
   #配置文件上传
   servlet:

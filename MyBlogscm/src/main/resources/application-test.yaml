@@ -2,7 +2,7 @@ spring:
   redis:
     host: 43.143.187.107
     port: 6380
-    password: 你的密码
+    password: scm13503905942
     database: 0
     jedis:
       pool:
@@ -11,9 +11,9 @@ spring:
         max-idle: 500
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://43.143.187.107:3306/你的数据库名?useUnicode=true&characterEncoding=UTF-8&useSSL=false&characterEncoding=UTF8
-    username: 你的用户名
-    password: 你的密码
+    url: jdbc:mysql://43.143.187.107:3306/yyy?useUnicode=true&characterEncoding=UTF-8&useSSL=false&characterEncoding=UTF8
+    username: yyy
+    password: scm13503905942
     type: com.alibaba.druid.pool.DruidDataSource
   #配置文件上传
   servlet:

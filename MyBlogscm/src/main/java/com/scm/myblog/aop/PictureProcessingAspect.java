@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 图像处理ASP
  *
- * @author 孙超孟
+ * @author Lancer
  * @date 2023/01/09
  */
 @Aspect

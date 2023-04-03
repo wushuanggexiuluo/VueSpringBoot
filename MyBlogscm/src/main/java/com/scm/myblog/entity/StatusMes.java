@@ -1,5 +1,7 @@
 package com.scm.myblog.entity;
 
+import javafx.scene.input.KeyCodeCombination;
+
 public enum StatusMes {
 
     SAVE_OK {
@@ -253,9 +255,30 @@ public enum StatusMes {
         public String getMes() {
             return "登录凭证过期";
         }
+    },
+    Pretend_delete{
+
+        public Integer getCode(){
+            return -1;
+        }
+        public String getMes(){
+            return "假装删除成功!需要真正删除的请下载源码后注释aop/PretendModifyAspect.java";
+        }
+    },
+    Pretend_update{
+        public Integer getCode(){
+            return -1;
+        }
+        public String getMes(){
+            return "假装更新成功!需要真正更新数据的请下载源码后注释aop/PretendModifyAspect.java";
+        }
     }
     ;
+
     public abstract String getMes();
     public abstract Integer getCode();
 
+    public Long getModifyIds() {
+        return -1L;
+    }
 }

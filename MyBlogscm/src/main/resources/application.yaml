@@ -1,0 +1,76 @@
+#spring:
+#  redis:
+#    host: localhost
+#    port: 6379
+#    password: scm13503905942
+#    database: 0
+#    jedis:
+#      pool:
+#        max-active: 10
+#        max-wait: 5000
+#        max-idle: 500
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/yyy?useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8
+#    username: yyy
+#    password: scm13503905942
+#    type: com.alibaba.druid.pool.DruidDataSource
+#  #配置文件上传
+#  servlet:
+#    multipart:
+#      max-file-size: 3MB
+#      max-request-size: 30MB
+#mybatis-plus:
+##  配置外部xml映射
+#  configuration:
+##    开启SQL日志输出
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+##    开启驼峰映射
+#    map-underscore-to-camel-case: true
+#  mapper-locations: classpath:mapper/*.xml
+##JWT配置
+#jwt:
+#  header: "Authorization" #token返回头部
+#  tokenPrefix: "Bearer " #token前缀
+#  secret: "qwertyuiop7418520" #密钥
+#  expireTime: 60 #token有效时间 (分钟) 建议一小时以上
+#
+#
+##spring:
+##  redis:
+##    host: 172.17.0.3
+##    port: 6379
+##    password:
+##    database: 0
+##    jedis:
+##      pool:
+##        max-active: 10
+##        max-wait: 5000
+##        max-idle: 500
+##  datasource:
+##    driver-class-name: com.mysql.cj.jdbc.Driver
+##    url: jdbc:mysql://172.17.0.2:3306/yyy?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+##    username: yyy
+##    password: scm13503905942
+##    type: com.alibaba.druid.pool.DruidDataSource
+##  #配置文件上传
+##  servlet:
+##    multipart:
+##      max-file-size: 3MB
+##      max-request-size: 30MB
+##mybatis-plus:
+##  #  配置外部xml映射
+##  configuration:
+##    #    开启SQL日志输出
+##    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+##    #    开启驼峰映射
+##    map-underscore-to-camel-case: true
+##  mapper-locations: classpath:mapper/*.xml
+###JWT配置
+##jwt:
+##  header: "Authorization" #token返回头部
+##  tokenPrefix: "Bearer " #token前缀
+##  secret: "qwertyuiop7418520" #密钥
+##  expireTime: 60 #token有效时间 (分钟) 建议一小时以上
+#
+#

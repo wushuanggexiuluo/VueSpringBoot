@@ -1,6 +1,7 @@
 package com.scm.myblog.aop;
 
 import com.scm.myblog.entity.Comment;
+import com.scm.myblog.entity.StatusMes;
 import com.scm.myblog.entity.VO.Result;
 import com.scm.myblog.serviceUtils.AdminBlogUtils;
 import com.scm.myblog.serviceUtils.RedisServiceBox;
@@ -80,10 +81,15 @@ public class WebDataRecordAspect {
         //获取方法返回值
         Object data=getResultData(r);
         if(data!=null){
-            Long[] ids=(Long[])data;
-            //删除文章的点赞数据在redis
-            RedisServiceBox.deleteBatchDataToRedis(ids);
-            log.info("删除文章成功！文章id为 "+ Arrays.toString(ids));
+            try{
+                Long[] ids =(Long[])data;
+                //删除文章的点赞数据在redis
+                RedisServiceBox.deleteBatchDataToRedis(ids);
+                log.info("删除文章成功！文章id为 "+ Arrays.toString(ids));
+            }
+            catch (Exception e){
+                log.info("假装删除文件成功！");
+            }
         }
     }
     //评论量增加在redis
@@ -105,11 +111,16 @@ public class WebDataRecordAspect {
         //获取方法返回值
         Object data=getResultData(r);
         if(data!=null){
-            List<Comment> commentList = (List<Comment>) (data);
-            List<Long> ids = AdminBlogUtils.getArticleIdByCommentList(commentList);
-            //更新Redis中的文章数据
-            RedisServiceBox.removeCommentCount(ids);
-            log.info("评论删除成功！文章id为"+ids);
+            try{
+                List<Comment> commentList = (List<Comment>) (data);
+                List<Long> ids = AdminBlogUtils.getArticleIdByCommentList(commentList);
+                //更新Redis中的文章数据
+                RedisServiceBox.removeCommentCount(ids);
+                log.info("评论删除成功！文章id为"+ids);
+            }
+            catch (Exception e){
+                log.info(StatusMes.Pretend_delete.getMes());
+            }
         }
     }
     public Object getResultData(Object r){

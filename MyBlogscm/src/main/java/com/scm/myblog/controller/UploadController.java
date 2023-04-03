@@ -28,8 +28,6 @@ public class UploadController {
         String url="";
         try {
             url=QiniuCloudUtil.upload(new File(UploadFileUtils.UploadTemp(file)));
-            //暂存session
-            request.getSession().setAttribute("url",url);
         } catch (IOException e) {
             throw new DefinitionException(Code.UPLOAD_ERR, Tips.UPLOAD_ERR);
         }

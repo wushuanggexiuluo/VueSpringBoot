@@ -65,7 +65,7 @@ public class WebLogAspect {
          */
         log.info("请求耗时："+ (System.currentTimeMillis() - startTime));
         // 处理完请求，返回内容
-        log.info("请求返回 :" + r);
+        log.info("请求返回 :");
         log.info("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
     }
