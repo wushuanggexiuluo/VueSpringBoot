@@ -11,13 +11,13 @@ Vue2+Redis5.8+Mysql5.8+Springboot2.7
 要想正常的启动项目需要以下操作，请逐步完成 
 
 ##### 如何修改项目？ 
-1 创建数据库: 执行SQL文件，请执行SQL文件，并记录下数据库名，密码名，用户名方便后续使用。 <br>
+1 创建数据库: 执行SQL文件，请执行SQL文件，并记录下数据库名，密码名，用户名方便后续使用。SQL文件可选择，运行全库SQL或者各个表的SQL <br>
 2 启动Redis: 请启动Redis，并将密码记录方便后续使用。 <br>
 3 修改前端： -> 进入src(前端目录)中后，先更改目录中的config文件夹下的地址（默认是localhost）,请按照需要更改 <br>
 4 修改后端： <br>
 ->1) 进入MyBlogscm/src/main/resources/application-dev.yaml文件，修改文件中的“你的数据库名”，“你的密码”，“你的用户名”信息为自己的<br> 
 ->2) 进入MyBlogscm/src/main/java/com/scm/myblog/utils/QiniuCloudUtil.java文件，修改文件中的七牛云配置 (可参考https://blog.csdn.net/qq_53679247/article/details/127748726，https://blog.csdn.net/qq_53679247/article/details/127747471) <br>
-不想改也可以使用我默认的（也就是我自己的，别搞破坏就行了，谢谢）
+不想改也可以使用我默认的（也就是我自己的，别搞破坏就行了，谢谢）<br>
 ->3) 进入MyBlogscm/src/main/resources/logback-spring.xml进行日志路径的更改
 修改弟4行中的value中的路径为自己的路径，
 ```xml
