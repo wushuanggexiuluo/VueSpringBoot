@@ -18,6 +18,11 @@ Vue2+Redis5.8+Mysql5.8+Springboot2.7
 ->1) 进入MyBlogscm/src/main/resources/application-dev.yaml文件，修改文件中的“你的数据库名”，“你的密码”，“你的用户名”信息为自己的<br> 
 ->2) 进入MyBlogscm/src/main/java/com/scm/myblog/utils/QiniuCloudUtil.java文件，修改文件中的七牛云配置 (可参考https://blog.csdn.net/qq_53679247/article/details/127748726，https://blog.csdn.net/qq_53679247/article/details/127747471) <br>
 不想改也可以使用我默认的（也就是我自己的，别搞破坏就行了，谢谢）
+->3) 进入MyBlogscm/src/main/resources/logback-spring.xml进行日志路径的更改
+修改弟4行中的value中的路径为自己的路径，
+```xml
+<property name="log.path" value="d:/logback" />
+```
 
 ###### 如何启动项目？ 在以上步骤全部完成后才能进行以下步骤 <br>
 1 前端文件夹夹执行命令<br>
