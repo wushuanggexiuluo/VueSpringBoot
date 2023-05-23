@@ -1,0 +1,98 @@
+create table category
+(
+    category_id          int auto_increment comment '分类ID'
+        primary key,
+    category_name        varchar(50)             null comment '分类名称',
+    category_description varchar(255) default '' null comment '描述',
+    category_icon        varchar(255)            null comment '图标'
+)
+    charset = utf8mb3
+    row_format = DYNAMIC;
+
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (1, 'Java', 'Java是一门面向对象编程语言', 'http://cdn.forevergtt.love/mysystem/medicine/3f802b44-5ec6-42b0-92b1-9c51d01157fa');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (2, '算法', '算法（Algorithm）是指解题方案的准确而完整的描述，是一系列解决问题的清晰指令，算法代表着用系统的方法描述解决问题的策略机制。', 'http://cdn.forevergtt.love/mysystem/medicine/3186e3ee-418b-4eb4-8c36-dd0f882c5a76');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (3, '数据结构', '数据结构是计算机存储、组织数据的方式。', 'http://cdn.forevergtt.love/mysystem/medicine/eabb63dd-a404-474c-aff7-82e04caa5304');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (4, 'C++', 'C++是一种计算机高级程序设计语言，由C语言扩展升级而产生 [17]  ，最早于1979年由本贾尼·斯特劳斯特卢普在AT&T贝尔工作室研发。C++拥有计算机运行的实用性特征，同时还致力于提高大规模程序的编程质量与程序设计语言的问题描述能力。', 'http://cdn.forevergtt.love/mysystem/medicine/8aafc3c5-3699-466d-8350-0f2c9c71934a');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (5, '操作系统', '操作系统（英语：Operating System，缩写：OS）是一组主管并控制计算机操作、运用和运行硬件、软件资源和提供公共服务来组织用户交互的相互关联的系统软件程序。', 'http://cdn.forevergtt.love/mysystem/medicine/ba30c775-f458-4527-b5e6-93fe456eee26');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (6, '计算机网络', '计算机网络是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，在网络操作系统，网络管理软件及网络通信协议的管理和协调下，实现资源共享和信息传递的计算机系统。', 'http://cdn.forevergtt.love/mysystem/medicine/7636e5f9-fa46-4f13-9e3f-b42e15b327a6');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (7, '面试题', '面试的经典问题和答案', 'http://cdn.forevergtt.love/mysystem/medicine/9f6e9ee2-23cb-4d11-a51c-37896d80fb21');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (8, '数据库', '数据库是“按照数据结构来组织、存储和管理数据的仓库”。是一个长期存储在计算机内的、有组织的、可共享的、统一管理的大量数据的集合。', 'http://cdn.forevergtt.love/mysystem/medicine/66b69521-ef00-4b85-92dd-d436ee1df705');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (9, 'MySQL', 'MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于 Oracle 旗下产品。MySQL 是最流行的关系型数据库管理系统之一，在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件之一。', 'http://cdn.forevergtt.love/mysystem/medicine/2989a2e1-124d-417b-ab00-5c6f86439b72');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (10, 'Spring', 'Spring框架是一个开放源代码的J2EE应用程序框架，由Rod Johnson发起，是针对bean的生命周期进行管理的轻量级容器（lightweight container）。 Spring解决了开发者在J2EE开发中遇到的许多常见的问题，提供了功能强大IOC、AOP及Web MVC等功能。', 'http://cdn.forevergtt.love/mysystem/medicine/f445d474-f035-42cc-bf02-7319e949ec3f');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (11, 'SpringMVC', 'Spring MVC属于SpringFrameWork的后续产品，已经融合在Spring Web Flow里面。Spring 框架提供了构建 Web 应用程序的全功能 MVC 模块。', 'http://cdn.forevergtt.love/mysystem/medicine/a8ff7d40-b627-4642-ac3d-e317322b88ce');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (12, 'MyBatis', 'MyBatis本是apache的一个开源项目iBatis，2010年这个项目由apache software foundation迁移到了google code，并且改名为MyBatis。2013年11月迁移到Github。', 'http://cdn.forevergtt.love/mysystem/medicine/a36294a3-e936-44d1-a193-543da0187baf');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (13, 'JVM', 'MyBatis本是apache的一个开源项目iBatis，2010年这个项目由apache software foundation迁移到了google code，并且改名为MyBatis。2013年11月迁移到Github。', 'http://cdn.forevergtt.love/mysystem/medicine/98c7d4c0-b38d-4ede-8df6-3758f460c738');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (14, '设计模式', '设计模式(Design pattern)是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。', 'http://cdn.forevergtt.love/mysystem/medicine/09930dc9-aba6-4346-985c-df723a34d474');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (15, '网络编程', '网络编程从大的方面说就是对信息的发送到接收，中间传输为物理线路的作用。', 'http://cdn.forevergtt.love/mysystem/medicine/351bbf95-7921-4ba4-9125-f81c249e44d6');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (16, 'IO', 'I/O输入/输出(Input/Output)，分为IO设备和IO接口两个部分。 ', 'http://cdn.forevergtt.love/mysystem/medicine/cca393b2-f77a-4ffd-9076-3902ac670c48');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (17, 'JSP', 'JSP（全称JavaServer Pages）是由Sun Microsystems公司主导创建的一种动态网页技术标准。', 'http://cdn.forevergtt.love/mysystem/medicine/a2528ff9-9325-4ec1-882c-2f3eaa008f13');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (18, 'Servlet', 'Servlet（Server Applet）是Java Servlet的简称，称为小服务程序或服务连接器，用Java编写的服务器端程序，具有独立于平台和协议的特性，主要功能在于交互式地浏览和生成数据，生成动态Web内容。', 'http://cdn.forevergtt.love/mysystem/medicine/3882ff46-f742-4c38-bc5a-5cf44abb387f');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (19, 'JavaWeb', 'Java Web，是用Java技术来解决相关web互联网领域的技术栈。', 'http://cdn.forevergtt.love/mysystem/medicine/d03e8a98-e8a0-4eef-a046-22f137fc79f9');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (20, 'Hibernate', 'Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的orm框架，hibernate可以自动生成SQL语句，自动执行，使得Java程序员可以随心所欲的使用对象编程思维来操纵数据库。', 'http://cdn.forevergtt.love/mysystem/medicine/4658311d-7a49-43cc-a33f-0794bd3322f7');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (21, 'SQL', '结构化查询语言（Structured Query Language）简称SQL，是一种特殊目的的编程语言，是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统。', 'http://cdn.forevergtt.love/mysystem/medicine/4a19ce29-8715-4aed-99a8-791b7acac2c7');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (22, 'Redis', 'Redis（Remote Dictionary Server )，即远程字典服务，是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。', 'http://cdn.forevergtt.love/mysystem/medicine/eaebd843-8150-403c-a12e-11d7320c4dab');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (23, 'Ssm', 'SSM（Spring+SpringMVC+MyBatis）框架集由Spring、MyBatis两个开源框架整合而成（SpringMVC是Spring中的部分内容），常作为数据源较简单的web项目的框架。', 'http://cdn.forevergtt.love/mysystem/medicine/f73a299d-1f7c-4f54-b2d1-075d99edd980');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (24, 'JavaScript', 'JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式、声明式、函数式编程范式。', 'http://cdn.forevergtt.love/mysystem/medicine/9b77b9f3-c7ef-4fac-b91f-3876c3b7347f');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (25, 'Dubbo', 'Dubbo(读音[ˈdʌbəʊ])是阿里巴巴公司开源的一个高性能优秀的服务框架，使得应用可通过高性能的 RPC 实现服务的输出和输入功能，可以和 [1]  Spring框架无缝集成。', 'http://cdn.forevergtt.love/mysystem/medicine/7f8811b5-1527-4bf3-9448-c50c141b171d');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (26, 'VM', '虚拟机（Virtual Machine）指通过软件模拟的具有完整硬件系统功能的、运行在一个完全隔离环境中的完整计算机系统。', 'http://cdn.forevergtt.love/mysystem/medicine/e1bb9ccf-2778-4fff-802e-b4d62e28411b');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (27, 'MongoDB', 'MongoDB是一个基于分布式文件存储 [1]  的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。', 'http://cdn.forevergtt.love/mysystem/medicine/443ac75c-7cb4-4d24-883f-fe1e288a140e');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (28, 'SpringBoot', 'Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。通过这种方式，Spring Boot致力于在蓬勃发展的快速应用开发领域(rapid application development)成为领导者。', 'http://cdn.forevergtt.love/mysystem/medicine/791b7c70-9a88-4eab-8525-a18ecd737d58');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (29, 'ElasticSearch', 'Elasticsearch 是位于 Elastic Stack 核心的分布式搜索和分析引擎。', 'http://cdn.forevergtt.love/mysystem/medicine/6a315416-c1a0-49b4-841e-57ee81c65a3d');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (30, 'Docker', 'Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows操作系统的机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。', 'http://cdn.forevergtt.love/mysystem/medicine/88a07d40-eba3-40a8-8c89-98977f85e32e');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (31, 'Jenkins', 'Jenkins是一个开源软件项目，是基于Java开发的一种持续集成工具，用于监控持续重复的工作，旨在提供一个开放易用的软件平台，使软件项目可以进行持续集成', 'http://cdn.forevergtt.love/mysystem/medicine/0a1842d2-2988-4ed3-94b4-574fec77345a');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (32, 'Vue', 'Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式JavaScript框架。', 'http://cdn.forevergtt.love/mysystem/medicine/abf70d7e-1d96-475d-87ee-4e12c01d1e6e');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (33, 'Php', 'PHP（PHP: Hypertext Preprocessor）即“超文本预处理器”，是在服务器端执行的脚本语言，尤其适用于Web开发并可嵌入HTML中。', 'http://cdn.forevergtt.love/mysystem/medicine/8fdcb9ea-f4fd-4259-97e2-8bb17946e9b1');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (34, 'Python', 'Python由荷兰数学和计算机科学研究学会的吉多·范罗苏姆于1990年代初设计，作为一门叫做ABC语言的替代品。 [1]  Python提供了高效的高级数据结构，还能简单有效地面向对象编程。', 'http://cdn.forevergtt.love/mysystem/medicine/7b6df35d-b767-411a-8f96-aa568cf276e1');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (35, 'C#', 'C#是微软公司发布的一种由C和C++衍生出来的面向对象的编程语言、运行于.NET Framework和.NET Core(完全开源，跨平台)之上的高级程序设计语言。', 'http://cdn.forevergtt.love/mysystem/medicine/1413bf41-9e41-4840-8afb-e6ad8d16814c');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (36, 'Rest', 'REST即表述性状态传递（英文：Representational State Transfer，简称REST）是Roy Fielding博士在2000年他的博士论文中提出来的一种软件架构风格。它是一种针对网络应用的设计和开发方式，可以降低开发的复杂性，提高系统的可伸缩性。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (37, 'API', 'API之主要目的是提供应用程序与开发人员以访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节。提供API所定义的功能的软件称作此API的实现。API是一种接口，故而是一种抽象。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (38, 'IOS', 'iOS是由苹果公司开发的移动操作系统。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (39, 'Css', '层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (40, 'Html', 'HTML的全称为超文本标记语言，是一种标记语言。它包括一系列标签．通过这些标签可以将网络上的文档格式统一，使分散的Internet资源连接为一个逻辑整体。', '1');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (41, '软件工程', '软件工程是一门研究用工程化方法构建和维护有效、实用和高质量的软件的学科。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (42, '量子力学', '量子力学（Quantum Mechanics），为物理学理论，是研究物质世界微观粒子运动规律的物理学分支，主要研究原子、分子、凝聚态物质，以及原子核和基本粒子的结构、性质的基础理论。它与相对论一起构成现代物理学的理论基础。量子力学不仅是现代物理学的基础理论之一，而且在化学等学科和许多近代技术中得到广泛应用。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (43, 'el-admin', 'el-admin 是一个基于 Spring Boot 2.1.0 、 Spring boot Jpa、 Spring Security、redis、Vue 的前后端分离的权限管理系统，项目采用分模块开发方式， 权限控制采用 RBAC（Role-Based Access Control，基于角色的访问控制），前端菜单支持动态路由。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (44, 'Git', 'Git（读音为/gɪt/）是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。 [1]  也是Linus Torvalds为了帮助管理Linux内核开发而开发的一个开放源码的版本控制软件。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (45, 'UML', '统一建模语言(Unified Modeling Language，UML)是一种为面向对象系统的产品进行说明、可视化和编制文档的一种标准语言，是非专利的第三代建模和规约语言。UML是面向对象设计的建模工具，独立于任何具体程序设计语言。 [1]', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (46, '软件测试', '软件测试（英语：Software Testing），描述一种用来促进鉴定软件的正确性、完整性、安全性和质量的过程。换句话说，软件测试是一种实际输出与预期输出之间的审核或者比较过程。软件测试的经典定义是：在规定的条件下对程序进行操作，以发现程序错误，衡量软件质量，并对其是否能满足设计要求进行评估的过程。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (47, 'HashMap', '基于哈希表的 Map 接口的实现。此实现提供所有可选的映射操作，并允许使用 null 值和 null 键', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (48, 'Xml', '可扩展标记语言 (Extensible Markup Language, XML) ，标准通用标记语言的子集，可以用来标记数据、定义数据类型，是一种允许用户对自己的标记语言进行定义的源语言。 XML是标准通用标记语言 可扩展性良好,内容与形式分离,遵循严格的语法要求,保值性良好等优点,', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (49, 'ArrayList', 'ArrayList就是动态数组，用MSDN中的说法，就是Array的复杂版本，它提供了动态的增加和减少元素，实现了ICollection和IList接口，灵活的设置数组的大小等好处
+', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (50, 'UI', '用户界面(User Interface)是指对软件的人机交互、操作逻辑、界面美观的整体设计。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (51, 'Tomcat', 'Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。由于有了Sun 的参与和支持，最新的Servlet 和JSP 规范总是能在Tomcat 中得到体现，Tomcat 5支持最新的Servlet 2.4 和JSP 2.0 规范。因为Tomcat 技术先进、性能稳定，而且免费，因而深受Java 爱好者的喜爱并得到了部分软件开发商的认可，成为比较流行的Web 应用服务器。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (52, 'Aop', '在软件业，AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期间动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (53, 'Nginx', 'Nginx (engine x) 是一个高性能的HTTP和反向代理web服务器 [13]  ，同时也提供了IMAP/POP3/SMTP服务。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambler.ru站点（俄文：Рамблер）开发的，公开版本1.19.6发布于2020年12月15日。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (54, 'Bean', 'EJB是Enterprise Java Bean的缩写，一个Bean扮演着应用程序素材的角色。它包含有一个functional interface，一个life-cycle interface，以及一个实现它所支援的商业方法的类别。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (55, 'SpringFramework', 'springframework 是spring 里面的一个基础开源框架，主要用于javaee的企业开发。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (56, 'Ajax', 'Ajax即Asynchronous Javascript And XML（异步JavaScript和XML）在 2005年被Jesse James Garrett提出的新术语，用来描述一种使用现有技术集合的‘新’方法，包括: HTML 或 XHTML, CSS, JavaScript, DOM, XML, XSLT, 以及最重要的XMLHttpRequest。 [3]  使用Ajax技术网页应用能够快速地将增量更新呈现在用户界面上，而不需要重载（刷新）整个页面，这使得程序能够更快地回应用户的操作。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (57, 'React', 'React是用于构建用户界面的JavaScript库， [1]  起源于Facebook的内部项目，该公司对市场上所有 JavaScript MVC框架都不满意，决定自行开发一套，用于架设Instagram的网站。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (58, 'axios', 'Axios，是一个基于promise [5]  的网络请求库，作用于node.js和浏览器中，它是 isomorphic 的(即同一套代码可以运行在浏览器和node.js中)。在服务端它使用原生node.js http模块, 而在客户端 (浏览端) 则使用XMLHttpRequest。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (59, 'Bootstrap', 'Bootstrap是美国Twitter公司的设计师Mark Otto和Jacob Thornton合作基于HTML、CSS、JavaScript 开发的简洁、直观、强悍的前端开发框架，使得 Web 开发更加快捷。Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (60, 'Gitlab', 'GitLab 是一个用于仓库管理系统的开源项目，使用Git作为代码管理工具，并在此基础上搭建起来的Web服务。', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (65, 'C', ' ', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (66, '计算机', ' ', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (67, '就业', ' ', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (68, '网络安全', ' ', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (69, '成功', ' ', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (70, '程序员', ' ', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (71, '成长', ' ', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (72, 'csdn', ' ', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (73, '编程语言', ' ', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (74, '思路', ' ', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (75, '新闻', ' ', 'http://cdn.forevergtt.love/mysystem/medicine/2ba9053a-4f50-40ac-a82b-aa3482472f76');
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (78, 'BB', ' ', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (80, 'DD', '', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (82, 'W', '', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (83, 'springbooot', '', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (84, 'java', '', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (85, 'JAVA', '', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (86, 'VUE', '', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (87, 'XX', '', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (88, 'A', '', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (89, 'B', '', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (90, 'JAva', '', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (91, 'Springboot', '', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (92, '架构', '', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (93, 'vue', '', null);
+INSERT INTO yyy.category (category_id, category_name, category_description, category_icon) VALUES (94, 'jvm', '', null);
