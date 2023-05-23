@@ -4,7 +4,7 @@
     <select id="getIdByTagName" resultType="Long">
         SELECT category_id FROM category where BINARY category_name=#{categoryName}
     </select>
-    <select id="getAllTagPage" resultType="com.scm.myblog.entity.Category">
+    <select id="getAllTagPage" resultType="com.scm.myblog.entity.DOMAIN.Category">
         SELECT *
         FROM category
         where category_name LIKE concat('%', #{categoryName}, '%')

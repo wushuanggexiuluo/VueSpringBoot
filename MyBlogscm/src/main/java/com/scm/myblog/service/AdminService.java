@@ -1,6 +1,6 @@
 package com.scm.myblog.service;
 
-import com.scm.myblog.entity.Article;
+import com.scm.myblog.entity.DOMAIN.Article;
 import com.scm.myblog.entity.DTO.ArticleDto;
 import com.scm.myblog.entity.DTO.ArticleSearchDto;
 import com.scm.myblog.entity.DTO.PageDto;
@@ -42,4 +42,10 @@ public interface AdminService {
      * @return {@link Result}
      */
     Result removeArticles(Long[] ids);
+
+    Result setArticleSort(Integer[] sortIds);
+
+    Result setArticleSortOnJH(Integer sortId);
+
+    Result setArticleSortOnGD(Integer sortId);
 }

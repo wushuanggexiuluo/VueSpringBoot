@@ -1,4 +1,9 @@
 spring:
+#  缓存配置
+  cache:
+    type: CAFFEINE
+    caffeine:
+      spec: maximumSize=500,expireAfterAccess=600s
   redis:
     host: localhost
     port: 6379
@@ -11,8 +16,8 @@ spring:
         max-idle: 500
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/yyy?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
-    username: yyy
+    url: jdbc:mysql://localhost:3306/yyy?useSSL=false&serverTimezone=UTC&characterEncoding=utf8&allowPublicKeyRetrieval=true
+    username: root
     password: scm13503905942
     type: com.alibaba.druid.pool.DruidDataSource
   #配置文件上传
@@ -20,6 +25,8 @@ spring:
     multipart:
       max-file-size: 3MB
       max-request-size: 30MB
+  profiles:
+    active: dev
 mybatis-plus:
 #  配置外部xml映射
   configuration:
@@ -28,10 +35,30 @@ mybatis-plus:
 #    开启驼峰映射
     map-underscore-to-camel-case: true
   mapper-locations: classpath:mapper/*.xml
+# 线程池配置
+thread-pool:
+  core-pool-size: 3
+  max-pool-size: 5
+  thread-name-prefix: yyg-async-
 #JWT配置
 jwt:
   header: "Authorization" #token返回头部
   tokenPrefix: "Bearer " #token前缀
   secret: "qwertyuiop7418520" #密钥
   expireTime: 60 #token有效时间 (分钟) 建议一小时以上
+justauth:
+  # 是否启用
+  enabled: true
+  type:
+    # 配置各种类型的登陆
+    GITEE:
+      # 创建的应用的client-id
+      client-id: 57ab61fd077ecf115e366514cbd6d88c647eaa30e1ddc083497516e8e27c2f5b
+      client-secret: 36c79e73ed6daca4221d799e6462e77ad7573c6bd4dab4aaaa57005cad58fcdc
+      # 自己写的回调地址
+      redirect-uri: http://127.0.0.1:8081/Auth/gitee/callback
+  cache:
+    type: default
 
+swagger:
+  enabled: true

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c5688ed0-316d-477d-9158-dbcc2942ab46" name="变更" comment="博客项目代码库大更新，主要是加入&#10;0 重构整个项目的排布&#10;1 重构异常处理模块，请查看common,可非常方便的移植&#10;2 新增分组校验示例，自定义校验注解，在common中，可参考完成个性化需求&#10;3 加入新的缓存机制，提高响应速度在com/scm/myblog/manager/CacheManage&#10;4 优化定时任务&#10;5 新增redis一键启动脚本，请修改为自用在cmd中&#10;6 使用4层架构新增manage层，为公用数据访问方法&#10;7 新增日志机制具体到年-月-日，默认的保留60天的日志，请修改src/main/resources/logback-spring.xml，使得日志存放在指定的位置&#10;8 新增文章自定义排序接口排序、精华排序、归档排序接口在&#10;com/scm/myblog/controller/admincontrollers/AdminArticleController.java&#10;9 新增若干工具类&#10;10 新增错误转发控制器&#10;11 新增动态定时任务管理模块（正在开发。。）" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Enum" />
+        <option value="JUnit4 Test Class" />
+        <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="A:/maven/apache-maven-3.8.6" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="A:\maven\apache-maven-3.8.6\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2I1zIr6udTGtLkd6MWSLWTO5Ak6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "last_opened_file_path": "F:/JAVA EE Preject/MyBlogscm/MyBlogscm",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "项目",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.583908",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "fef1617627d4e8cf78c0c32ceaa573d3"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\JAVA EE Preject\MyBlogscm\src\main\resources" />
+      <recent name="F:\JAVA EE Preject\MyBlogscm\src\main\java\com\scm\myblog\service\impl" />
+      <recent name="F:\JAVA EE Preject\MyBlogscm\src\main\java\com\scm\myblog\service" />
+      <recent name="F:\JAVA EE Preject\MyBlogscm\src\main\java\com\scm\myblog\entity\DOMAIN" />
+      <recent name="F:\JAVA EE Preject\MyBlogscm\src\main\java\com\scm\myblog\common\ExceptionLancer" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\JAVA EE Preject\MyBlogscm\src\main\resources\config" />
+      <recent name="F:\JAVA EE Preject\MyBlogscm\src\main\resources\mapper" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.scm.myblog.utils" />
+      <recent name="com.scm.myblog.myvalidator" />
+      <recent name="com.scm.myblog.bo" />
+      <recent name="com.scm.myblog.service.impl" />
+      <recent name="com.scm.myblog.dao" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.scm.myblog.entity.DOMAIN" />
+      <recent name="com.scm.myblog.service" />
+      <recent name="com.scm.myblog.mapper" />
+      <recent name="com.scm.myblog.entity" />
+      <recent name="com.scm.myblog.entity.BO" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MyBlogscmApplication">
+    <configuration name="generated-requests | #31" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="31" requestIdentifier="#31" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #7" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="7" requestIdentifier="#7" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #8" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="8" requestIdentifier="#8" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
+    <configuration name="MyBlogscmApplicayionTest.x" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBlogscm" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyBlogscmApplicayionTest" />
+      <option name="METHOD_NAME" value="x" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SystemUtilsTest.isWindows" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBlogscm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.scm.myblog.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.scm.myblog.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.scm.myblog.utils.SystemUtilsTest" />
+      <option name="METHOD_NAME" value="isWindows" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBlogscmApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="MyBlogscm" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.scm.myblog.MyBlogscmApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP 请求.generated-requests | #31" />
+        <item itemvalue="HTTP 请求.generated-requests | #8" />
+        <item itemvalue="HTTP 请求.generated-requests | #7" />
+        <item itemvalue="JUnit.SystemUtilsTest.isWindows" />
+        <item itemvalue="JUnit.MyBlogscmApplicayionTest.x" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringBootOptions">
+    <option name="showAdditionalConfigNotification" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="c5688ed0-316d-477d-9158-dbcc2942ab46" name="变更" comment="" />
+      <created>1669363804760</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669363804760</updated>
+      <workItem from="1669363809429" duration="7144000" />
+      <workItem from="1669385383427" duration="6632000" />
+      <workItem from="1669514315408" duration="17862000" />
+      <workItem from="1669598162662" duration="2377000" />
+      <workItem from="1669605385262" duration="13154000" />
+      <workItem from="1669709090045" duration="9484000" />
+      <workItem from="1669770187933" duration="27777000" />
+      <workItem from="1669865586859" duration="1015000" />
+      <workItem from="1669884892734" duration="16869000" />
+      <workItem from="1669950928126" duration="23924000" />
+      <workItem from="1670032400513" duration="8923000" />
+      <workItem from="1670061285232" duration="8313000" />
+      <workItem from="1670116543883" duration="17330000" />
+      <workItem from="1670146093686" duration="3701000" />
+      <workItem from="1670202799502" duration="11751000" />
+      <workItem from="1670309953360" duration="10708000" />
+      <workItem from="1670375458877" duration="21784000" />
+      <workItem from="1670461789639" duration="25374000" />
+      <workItem from="1670544196312" duration="19759000" />
+      <workItem from="1670577716040" duration="3738000" />
+      <workItem from="1670584906366" duration="504000" />
+      <workItem from="1670588147013" duration="7218000" />
+      <workItem from="1670636842495" duration="8235000" />
+      <workItem from="1670662392414" duration="2228000" />
+      <workItem from="1670802720247" duration="11993000" />
+      <workItem from="1670821561633" duration="10199000" />
+      <workItem from="1670894980954" duration="9108000" />
+      <workItem from="1670914062244" duration="8805000" />
+      <workItem from="1670937498767" duration="782000" />
+      <workItem from="1670975261635" duration="5116000" />
+      <workItem from="1671000371150" duration="220000" />
+      <workItem from="1671000656293" duration="3644000" />
+      <workItem from="1671009306222" duration="6143000" />
+      <workItem from="1671066355638" duration="23086000" />
+      <workItem from="1671156282881" duration="9300000" />
+      <workItem from="1671326428422" duration="4466000" />
+      <workItem from="1671368779049" duration="791000" />
+      <workItem from="1671373161152" duration="50000" />
+      <workItem from="1671375055838" duration="166000" />
+      <workItem from="1671424137051" duration="369000" />
+      <workItem from="1671429111975" duration="7004000" />
+      <workItem from="1671441105955" duration="7843000" />
+      <workItem from="1671529754083" duration="2026000" />
+      <workItem from="1671581212815" duration="1307000" />
+      <workItem from="1671869430788" duration="12020000" />
+      <workItem from="1672139440604" duration="1794000" />
+      <workItem from="1672192045375" duration="21085000" />
+      <workItem from="1672366438422" duration="13607000" />
+      <workItem from="1672400945464" duration="2642000" />
+      <workItem from="1672450706570" duration="7338000" />
+      <workItem from="1672562806949" duration="4744000" />
+      <workItem from="1673166644005" duration="11374000" />
+      <workItem from="1673227912999" duration="13192000" />
+      <workItem from="1676372238996" duration="2891000" />
+      <workItem from="1676377094085" duration="1046000" />
+      <workItem from="1677057387557" duration="3604000" />
+      <workItem from="1677067311501" duration="15631000" />
+      <workItem from="1677140732138" duration="13087000" />
+      <workItem from="1677574942297" duration="4868000" />
+      <workItem from="1677653570594" duration="7524000" />
+      <workItem from="1677679867262" duration="12007000" />
+      <workItem from="1677722301421" duration="22983000" />
+      <workItem from="1678958793773" duration="4127000" />
+      <workItem from="1679320329021" duration="3034000" />
+      <workItem from="1679375094557" duration="3912000" />
+      <workItem from="1679573939673" duration="660000" />
+      <workItem from="1679883975283" duration="11586000" />
+      <workItem from="1679994223992" duration="3695000" />
+      <workItem from="1680017890569" duration="1981000" />
+      <workItem from="1680098095360" duration="66000" />
+      <workItem from="1680399233025" duration="1664000" />
+      <workItem from="1680445608987" duration="621000" />
+      <workItem from="1680511014641" duration="274000" />
+      <workItem from="1680513586530" duration="806000" />
+      <workItem from="1680570099273" duration="622000" />
+      <workItem from="1680595747116" duration="930000" />
+      <workItem from="1680833351556" duration="329000" />
+      <workItem from="1681089772210" duration="3257000" />
+      <workItem from="1681270362470" duration="5498000" />
+      <workItem from="1681355952645" duration="288000" />
+      <workItem from="1681356568565" duration="1015000" />
+      <workItem from="1681357633732" duration="4109000" />
+      <workItem from="1681953098340" duration="16235000" />
+      <workItem from="1681977771416" duration="11026000" />
+      <workItem from="1682061780507" duration="1198000" />
+      <workItem from="1682067516794" duration="3869000" />
+      <workItem from="1682082886713" duration="266000" />
+      <workItem from="1682083212050" duration="5168000" />
+      <workItem from="1682126414420" duration="14386000" />
+      <workItem from="1682216628310" duration="18626000" />
+      <workItem from="1682299203201" duration="6068000" />
+      <workItem from="1682384554162" duration="1364000" />
+      <workItem from="1682474649390" duration="2974000" />
+      <workItem from="1682478236460" duration="5963000" />
+      <workItem from="1682575982321" duration="19275000" />
+      <workItem from="1682648584732" duration="16181000" />
+      <workItem from="1683111546006" duration="162000" />
+      <workItem from="1683111774017" duration="5754000" />
+      <workItem from="1683160880558" duration="5639000" />
+      <workItem from="1683184160607" duration="2207000" />
+      <workItem from="1683190716274" duration="4143000" />
+      <workItem from="1683248167554" duration="2340000" />
+      <workItem from="1683255491327" duration="104000" />
+      <workItem from="1683255697656" duration="9149000" />
+      <workItem from="1683360033379" duration="115000" />
+      <workItem from="1683379768515" duration="1887000" />
+      <workItem from="1683515831327" duration="1296000" />
+      <workItem from="1683699734220" duration="1210000" />
+      <workItem from="1683706312885" duration="837000" />
+      <workItem from="1683799228011" duration="978000" />
+      <workItem from="1683815683233" duration="838000" />
+      <workItem from="1683858169069" duration="2556000" />
+      <workItem from="1684061813366" duration="684000" />
+      <workItem from="1684116833428" duration="1701000" />
+      <workItem from="1684221928901" duration="1425000" />
+      <workItem from="1684397968468" duration="2030000" />
+      <workItem from="1684808833527" duration="1172000" />
+      <workItem from="1684822800596" duration="2582000" />
+      <workItem from="1684832586539" duration="194000" />
+    </task>
+    <task id="LOCAL-00001" summary="更新">
+      <created>1672571023649</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1672571023649</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="更新" />
+    <MESSAGE value="博客项目代码库大更新，主要是加入" />
+    <MESSAGE value="博客项目代码库大更新，主要是加入&#10;0 重构整个项目的排布&#10;1 重构异常处理模块，请查看common,可非常方便的移植&#10;2 新增分组校验示例，自定义校验注解，在common中，可参考完成个性化需求&#10;3 加入新的缓存机制，提高响应速度在com/scm/myblog/manager/CacheManage&#10;4 优化定时任务&#10;5 新增redis一键启动脚本，请修改为自用在cmd中&#10;6 使用4层架构新增manage层，为公用数据访问方法&#10;7 新增日志机制具体到年-月-日，默认的保留60天的日志，请修改src/main/resources/logback-spring.xml，使得日志存放在指定的位置&#10;8 新增文章自定义排序接口排序、精华排序、归档排序接口在&#10;com/scm/myblog/controller/admincontrollers/AdminArticleController.java&#10;9 新增若干工具类&#10;10 新增错误转发控制器&#10;11 新增动态定时任务管理模块（正在开发。。）" />
+    <option name="LAST_COMMIT_MESSAGE" value="博客项目代码库大更新，主要是加入&#10;0 重构整个项目的排布&#10;1 重构异常处理模块，请查看common,可非常方便的移植&#10;2 新增分组校验示例，自定义校验注解，在common中，可参考完成个性化需求&#10;3 加入新的缓存机制，提高响应速度在com/scm/myblog/manager/CacheManage&#10;4 优化定时任务&#10;5 新增redis一键启动脚本，请修改为自用在cmd中&#10;6 使用4层架构新增manage层，为公用数据访问方法&#10;7 新增日志机制具体到年-月-日，默认的保留60天的日志，请修改src/main/resources/logback-spring.xml，使得日志存放在指定的位置&#10;8 新增文章自定义排序接口排序、精华排序、归档排序接口在&#10;com/scm/myblog/controller/admincontrollers/AdminArticleController.java&#10;9 新增若干工具类&#10;10 新增错误转发控制器&#10;11 新增动态定时任务管理模块（正在开发。。）" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/scm/myblog/filter/AuthFilter.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/scm/myblog/controller/blogcontrollers/Error2Controller.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/scm/myblog/service/impl/ArticleServiceImpl.java</url>
+          <line>218</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.apache.tomcat.util.http.fileupload.disk.DiskFileItem" memberName="dfos" />
+        <PinnedItemInfo parentTag="java.util.Collections$3" memberName="i" />
+        <PinnedItemInfo parentTag="org.apache.catalina.session.StandardSession" memberName="attributes" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MyBlogscm$MyBlogscmApplication.ic" NAME="MyBlogscmApplication 覆盖结果" MODIFIED="1682643914111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

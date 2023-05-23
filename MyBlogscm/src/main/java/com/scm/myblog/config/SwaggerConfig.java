@@ -1,5 +1,6 @@
 package com.scm.myblog.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -11,29 +12,42 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.ArrayList;
 
-@Configuration //配置类
-@EnableSwagger2// 开启Swagger2的自动配置
+
+@Configuration
+@EnableSwagger2
 public class SwaggerConfig {
-    //配置文档信息
-    private ApiInfo apiInfo() {
-        Contact contact = new Contact("Lancer", "", "2872392768@qq.com");
-        return new ApiInfo(
-                "个人博客系统", // 标题
-                "练手项目", // 描述
-                "v1.0", // 版本
-                "", // 组织链接
-                contact, // 联系人信息
-                "Apach 2.0 许可", // 许可
-                "",new ArrayList<>());
-    }
+    /**
+     * 用于读取配置文件 application.properties 中 swagger 属性是否开启
+     */
+    @Value("${swagger.enabled}")
+    Boolean swaggerEnabled;
+
     @Bean
     public Docket docket() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
-                .enable(true)//为false的话，不能通过浏览器访问swagger
-                .select()// 通过.select()方法，去配置扫描接口,RequestHandlerSelectors配置如何扫描接口
-                .apis(RequestHandlerSelectors.basePackage("com.scm.myblog.controller")
-                )
+                // 是否开启swagger
+                .enable(swaggerEnabled)
+                .select()
+                // 过滤条件，扫描指定路径下的文件
+                .apis(RequestHandlerSelectors.basePackage("com.scm.myblog.controller"))
+                // 指定路径处理，PathSelectors.any()代表不过滤任何路径
+                //.paths(PathSelectors.any())
                 .build();
+    }
+
+    private ApiInfo apiInfo() {
+        /*作者信息*/
+        Contact contact = new Contact("村雨遥", "https://cunyu1943.github.io", "747731461@qq.com");
+        return new ApiInfo(
+                "Spring Boot 集成 Swagger3 测试",
+                "Spring Boot 集成 Swagger3 测试接口文档",
+                "v1.0",
+                "https://cunyu1943.github.io",
+                contact,
+                "Apache 2.0",
+                "http://www.apache.org/licenses/LICENSE-2.0",
+                new ArrayList<>()
+        );
     }
 }

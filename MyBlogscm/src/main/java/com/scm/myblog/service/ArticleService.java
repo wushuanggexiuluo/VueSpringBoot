@@ -1,8 +1,10 @@
 package com.scm.myblog.service;
 
-import com.scm.myblog.entity.Article;
+
+import com.scm.myblog.entity.DOMAIN.Article;
 import com.scm.myblog.entity.DTO.ArticleSearchDto;
 import com.scm.myblog.entity.DTO.PageDto;
+import com.scm.myblog.entity.DTO.SouCangDto;
 import com.scm.myblog.entity.VO.Result;
 
 import javax.servlet.http.HttpServletRequest;
@@ -55,4 +57,8 @@ public interface ArticleService {
      * @return {@link Result}
      */
      Result getAllBoutique();
+
+    Result setShouCang(SouCangDto uid);
+
+    Result getShouCangData(Integer uid);
 }

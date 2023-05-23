@@ -3,6 +3,7 @@ package com.scm.myblog.utils;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.TokenExpiredException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +17,8 @@ import java.util.Date;
  * signature的生成算法：
  * HMACSHA512(base64UrlEncode(header) + "." +base64UrlEncode(payload),secret)
  */
+
+@Slf4j
 
 @Component
 @ConfigurationProperties(prefix = "jwt")
@@ -77,9 +80,9 @@ public class JWTUtils {
                     .verify(token.replace(tokenPrefix, ""))
                     .getSubject();
         } catch (TokenExpiredException e) {
-            System.out.println("token已经过期");
+            log.info("token已经过期");
         } catch (Exception e) {
-            System.out.println("token验证失败");
+            log.info("token验证失败");
         }
         return token;
     }
@@ -98,7 +101,7 @@ public class JWTUtils {
         } catch (TokenExpiredException e) {
             return true;
         } catch (Exception e) {
-            System.out.println("token验证失败");
+            log.info("token验证失败");
         }
         //如果剩余过期时间少于过期时常的一般时 需要更新
         assert expiresAt != null;

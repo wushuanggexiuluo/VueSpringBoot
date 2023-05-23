@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.sql.Timestamp;
 
@@ -26,7 +27,7 @@ public class CommentDto {
     private String commentAuthorName;
 
     @ApiModelProperty("评论人邮箱")
-    @NotBlank(message = "你的联系邮箱不能为空")
+    @Email(message = "你的联系邮箱不合规范！")
     private String commentAuthorEmail;
 
     @ApiModelProperty("评论人头像")

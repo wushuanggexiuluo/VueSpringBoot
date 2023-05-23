@@ -1,6 +1,6 @@
 //package com.scm.myblog.filter;
 //
-//import com.scm.myblog.config.ApiConfig;
+//import com.scm.myblog.config.securityconfig.ApiConfig;
 //import com.scm.myblog.utils.WebUtils;
 //import javax.servlet.*;
 //import javax.servlet.annotation.WebFilter;
@@ -34,18 +34,18 @@
 //        HttpServletRequest request = (HttpServletRequest) servletRequest;
 //        HttpServletResponse response = (HttpServletResponse) servletResponse;
 //        String uri = request.getRequestURI();
-//        System.out.println("需要过滤的链接为：" + uri);
+//        log.info("需要过滤的链接为：" + uri);
 //        boolean b = isFliter(uri);
-//        System.out.println("是否需要过滤："+b);
+//        log.info("是否需要过滤："+b);
 //        if (b)
 //        {
 //            boolean isExistUser=WebUtils.isExistUserSession(request);
 //            if(isExistUser)
 //            {
-//                System.out.println("此用户已登陆!");
+//                log.info("此用户已登陆!");
 //            }
 //            else {
-//                System.out.println("此用户未登录！");
+//                log.info("此用户未登录！");
 //            }
 //        }
 //        filterChain.doFilter(request, response);

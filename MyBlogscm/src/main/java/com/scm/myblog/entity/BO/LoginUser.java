@@ -1,7 +1,7 @@
 package com.scm.myblog.entity.BO;
 
 import com.alibaba.fastjson.annotation.JSONField;
-import com.scm.myblog.entity.User;
+import com.scm.myblog.entity.DOMAIN.User;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;

@@ -29,7 +29,7 @@
 //        try{
 //            sessions.remove(currentSession);
 //        }catch (Exception e) {
-//            System.out.println("用户异常！");
+//            log.info("用户异常！");
 //        }
 //        if(sessions != null){
 //            //如果List中没有该元素，则说明当前IP所发出的会话全部关闭，就可以从map中

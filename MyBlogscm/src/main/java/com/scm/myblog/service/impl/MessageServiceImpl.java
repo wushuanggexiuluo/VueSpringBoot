@@ -1,13 +1,11 @@
 package com.scm.myblog.service.impl;
 
-import com.scm.myblog.entity.StatusMes;
+import com.scm.myblog.entity.CORE.StatusMes;
+import com.scm.myblog.entity.DOMAIN.Message;
 import com.scm.myblog.mapper.MessageMapper;
-import com.scm.myblog.entity.Code;
 import com.scm.myblog.entity.DTO.MessageDto;
 import com.scm.myblog.entity.DTO.MessageSearch;
 import com.scm.myblog.entity.DTO.PageDto;
-import com.scm.myblog.entity.Message;
-import com.scm.myblog.entity.Tips;
 import com.scm.myblog.entity.VO.MessageVo;
 import com.scm.myblog.entity.VO.PageData;
 import com.scm.myblog.entity.VO.Result;
@@ -46,7 +44,7 @@ public class MessageServiceImpl implements MessageService {
                 BeanUtils.copyProperties(message, m);
                 lm.add(m);
             }
-            return new Result(lm, StatusMes.GET_OK.getCode(), StatusMes.GET_OK.getMes());
+            return new Result(lm, StatusMes.GET_OK.getCode(), StatusMes.GET_OK.getMessage());
     }
 
     /**
@@ -74,7 +72,7 @@ public class MessageServiceImpl implements MessageService {
                 search.getMessageAuthorName(),
                 search.getMessageAuthorEmail(),
                 search.getMessageContent());
-        return new Result(new PageData<Message>(messagePage,i),StatusMes.PAGE_OK.getCode(),StatusMes.PAGE_OK.getMes());
+        return new Result(new PageData<Message>(messagePage,i),StatusMes.PAGE_OK.getCode(),StatusMes.PAGE_OK.getMessage());
     }
     /**
      * 设置消息
@@ -88,7 +86,7 @@ public class MessageServiceImpl implements MessageService {
         BeanUtils.copyProperties(msg, m);
         m.setMessageIp(res.getRemoteAddr());
         int i = ms.insert(m);
-        return new Result(null, i > 0 ? StatusMes.SAVE_OK.getCode() : StatusMes.SAVE_ERR.getCode(), i > 0 ? StatusMes.SAVE_OK.getMes() : StatusMes.SAVE_ERR.getMes());
+        return new Result(null, i > 0 ? StatusMes.SAVE_OK.getCode() : StatusMes.SAVE_ERR.getCode(), i > 0 ? StatusMes.SAVE_OK.getMessage() : StatusMes.SAVE_ERR.getMessage());
     }
 
     /**
@@ -106,7 +104,7 @@ public class MessageServiceImpl implements MessageService {
         else {
             i=ms.deleteById(ids[0]);
         }
-        return new Result(null,i>0?StatusMes.DELETE_OK.getCode(): StatusMes.DELETE_ERR.getCode(),i>0?StatusMes.DELETE_OK.getMes():StatusMes.DELETE_ERR.getMes());
+        return new Result(null,i>0?StatusMes.DELETE_OK.getCode(): StatusMes.DELETE_ERR.getCode(),i>0?StatusMes.DELETE_OK.getMessage():StatusMes.DELETE_ERR.getMessage());
     }
 
     /**
@@ -117,7 +115,7 @@ public class MessageServiceImpl implements MessageService {
      */
     public Result updateMessage(Message message) {
        int i= ms.updateById(message);
-        return new Result(null,i>0?StatusMes.UPDATE_OK.getCode(): StatusMes.UPDATE_ERR.getCode(),i>0?StatusMes.UPDATE_OK.getMes():StatusMes.UPDATE_ERR.getMes());
+        return new Result(null,i>0?StatusMes.UPDATE_OK.getCode(): StatusMes.UPDATE_ERR.getCode(),i>0?StatusMes.UPDATE_OK.getMessage():StatusMes.UPDATE_ERR.getMessage());
 
     }
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scm.myblog.mapper.UserInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.scm.myblog.entity.DOMAIN.UserInfo">
+            <result property="userId" column="user_id" jdbcType="INTEGER"/>
+            <result property="userAvatarImg" column="user_avatar_img" jdbcType="INTEGER"/>
+            <result property="userText" column="user_text" jdbcType="INTEGER"/>
+            <result property="userSex" column="user_sex" jdbcType="INTEGER"/>
+            <result property="userBlog" column="user_blog" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,user_avatar_img,user_text,
+        user_sex,user_blog
+    </sql>
+</mapper>

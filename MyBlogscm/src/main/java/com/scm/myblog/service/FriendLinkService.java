@@ -1,9 +1,9 @@
 package com.scm.myblog.service;
 
+import com.scm.myblog.entity.DOMAIN.Link;
 import com.scm.myblog.entity.DTO.LinkDto;
 import com.scm.myblog.entity.DTO.LinkSearchDto;
 import com.scm.myblog.entity.DTO.PageDto;
-import com.scm.myblog.entity.Link;
 import com.scm.myblog.entity.VO.Result;
 
 import javax.servlet.http.HttpServletRequest;

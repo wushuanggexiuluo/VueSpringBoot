@@ -1,9 +1,12 @@
 package com.scm.myblog.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.scm.myblog.entity.*;
-import com.scm.myblog.serviceUtils.AdminBlogUtils;
-import com.scm.myblog.serviceUtils.UserBlogUtils;
+
+import com.scm.myblog.entity.CORE.StatusMes;
+import com.scm.myblog.entity.DOMAIN.Article;
+import com.scm.myblog.entity.DOMAIN.Category;
+import com.scm.myblog.manager.AdminBlogManager;
+import com.scm.myblog.manager.UserBlogUtils;
 import com.scm.myblog.mapper.CategoryMapper;
 import com.scm.myblog.entity.DTO.TagSearchDto;
 import com.scm.myblog.entity.DTO.PageDto;
@@ -11,12 +14,14 @@ import com.scm.myblog.entity.VO.PageData;
 import com.scm.myblog.entity.VO.Result;
 import com.scm.myblog.service.TagService;
 import com.scm.myblog.utils.DbUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
 @Service
+@Slf4j
 public class TagServiceImpl implements TagService {
     @Autowired
     public CategoryMapper tag;
@@ -34,7 +39,7 @@ public class TagServiceImpl implements TagService {
         List<String> tagNames = new ArrayList<>();
         //根据id获取标签名
         for (Long id : newIds) {
-            List<Long> idsList = AdminBlogUtils.getArtTagIdsList(id);
+            List<Long> idsList = AdminBlogManager.getArtTagIdsList(id);
             List<Category> categories=new ArrayList<>();
             if(idsList.size()>0) {
                  categories= tag.selectBatchIds(idsList);
@@ -44,8 +49,8 @@ public class TagServiceImpl implements TagService {
             }
         }
         //去除重复标签
-        List<String> stringList = AdminBlogUtils.toDistinctByListString(tagNames);
-        return new Result(stringList, StatusMes.GET_OK.getCode(), StatusMes.GET_OK.getMes());
+        List<String> stringList = AdminBlogManager.toDistinctByListString(tagNames);
+        return new Result(stringList, StatusMes.GET_OK.getCode(), StatusMes.GET_OK.getMessage());
     }
     /**
      * 把所有标签页
@@ -55,7 +60,7 @@ public class TagServiceImpl implements TagService {
      */
     public Result getAllTagPage(PageDto<Category, TagSearchDto> pto) {
         TagSearchDto search = pto.getSearch();
-        System.out.println(pto);
+        log.info(pto.toString());
         //设置默认页
         UserBlogUtils.setDefaultPage(pto);
         pto.setCurrPage(DbUtils.getCurePage(pto.getCurrPage(), pto.getPageSize()));
@@ -67,7 +72,7 @@ public class TagServiceImpl implements TagService {
         Integer i = tag.getAllTagCount(
                 search.getCategoryName(),
                 search.getCategoryDescription());
-        return new Result(new PageData<Category>(tagPage, i), StatusMes.PAGE_OK.getCode(), StatusMes.PAGE_OK.getMes());
+        return new Result(new PageData<Category>(tagPage, i), StatusMes.PAGE_OK.getCode(), StatusMes.PAGE_OK.getMessage());
     }
 
     /**
@@ -85,9 +90,9 @@ public class TagServiceImpl implements TagService {
         }
         //同时删除对应文章的标签，和文章标签映射表的数据
 
-        AdminBlogUtils.deleteArticleRefTag(Arrays.asList(ids));
+        AdminBlogManager.deleteArticleRefTag(Arrays.asList(ids));
         return new Result(null, i > 0 ? StatusMes.DELETE_OK.getCode() : StatusMes.DELETE_ERR.getCode(),
-                i > 0 ? StatusMes.DELETE_OK.getMes() : StatusMes.DELETE_ERR.getMes());
+                i > 0 ? StatusMes.DELETE_OK.getMessage() : StatusMes.DELETE_ERR.getMessage());
 
     }
 
@@ -99,7 +104,7 @@ public class TagServiceImpl implements TagService {
      */
     public Result updateTag(Category tag1) {
         int i = tag.updateById(tag1);
-        return new Result(null, i > 0 ? StatusMes.UPDATE_OK.getCode() : StatusMes.UPDATE_ERR.getCode(), i > 0 ? StatusMes.UPDATE_OK.getMes() : StatusMes.UPDATE_ERR.getMes());
+        return new Result(null, i > 0 ? StatusMes.UPDATE_OK.getCode() : StatusMes.UPDATE_ERR.getCode(), i > 0 ? StatusMes.UPDATE_OK.getMessage() : StatusMes.UPDATE_ERR.getMessage());
 
     }
 
@@ -114,7 +119,7 @@ public class TagServiceImpl implements TagService {
         if (one == null) {
             int i = tag.insert(tag1);
             return new Result(null, i > 0 ? StatusMes.SAVE_OK.getCode() : StatusMes.SAVE_ERR.getCode(),
-                    i > 0 ? StatusMes.SAVE_OK.getMes() : StatusMes.SAVE_ERR.getMes());
+                    i > 0 ? StatusMes.SAVE_OK.getMessage() : StatusMes.SAVE_ERR.getMessage());
         } else {
             return new Result(null, StatusMes.SAVE_ERR.getCode(), "标签名不能重复！");
         }
@@ -122,7 +127,7 @@ public class TagServiceImpl implements TagService {
     }
     public Result getArticleByTag(String tag1) {
         List<Article> list = UserBlogUtils.getArticleListByTag(tag1, false);
-        return new Result(list,StatusMes.GET_OK.getCode(), StatusMes.GET_OK.getMes());
+        return new Result(list,StatusMes.GET_OK.getCode(), StatusMes.GET_OK.getMessage());
     }
 
     //获取所有标签数据
@@ -132,6 +137,6 @@ public class TagServiceImpl implements TagService {
                 .like(Category::getCategoryName,pto.getSearch().getCategoryName())
                 .like(Category::getCategoryDescription,pto.getSearch().getCategoryDescription());
         List<Category> categories = tag.selectList(c);
-        return new Result(categories, StatusMes.PAGE_OK.getCode(), StatusMes.PAGE_OK.getMes());
+        return new Result(categories, StatusMes.PAGE_OK.getCode(), StatusMes.PAGE_OK.getMessage());
     }
 }

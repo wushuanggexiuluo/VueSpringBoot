@@ -1,7 +1,7 @@
 package com.scm.myblog.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.scm.myblog.entity.Comment;
+import com.scm.myblog.entity.DOMAIN.Comment;
 import com.scm.myblog.entity.VO.CommentVo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

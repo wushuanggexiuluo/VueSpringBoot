@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scm.myblog.mapper.OauthUserInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.scm.myblog.entity.DOMAIN.OauthUserInfo">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="uid" column="uid" jdbcType="VARCHAR"/>
+            <result property="username" column="username" jdbcType="VARCHAR"/>
+            <result property="avatar" column="avatar" jdbcType="VARCHAR"/>
+            <result property="oauth_token" column="oauth_token" jdbcType="VARCHAR"/>
+            <result property="oauth_expireIn" column="oauth_expireIn" jdbcType="INTEGER"/>
+            <result property="oauth_platform_id" column="oauth_platform_id" jdbcType="INTEGER"/>
+            <result property="is_delete" column="is_delete" jdbcType="INTEGER"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,uid,username,
+        avatar,oauth_token,oauth_expireIn,
+        oauth_platform_id,is_delete,status
+    </sql>
+</mapper>

@@ -1,9 +1,10 @@
 package com.scm.myblog.controller;
 
-import com.scm.myblog.entity.Code;
-import com.scm.myblog.entity.Tips;
+import com.scm.myblog.common.ExceptionLancer.CommonException;
+import com.scm.myblog.entity.CORE.Code;
+import com.scm.myblog.entity.CORE.Tips;
 import com.scm.myblog.entity.VO.Result;
-import com.scm.myblog.exception.DefinitionException;
+
 import com.scm.myblog.utils.QiniuCloudUtil;
 import com.scm.myblog.utils.UploadFileUtils;
 import io.swagger.annotations.Api;
@@ -25,11 +26,11 @@ public class UploadController {
     @ApiOperation("上传文件")
     @PostMapping("/Upload")
     public Result UploadFile(@RequestParam("file") MultipartFile file, HttpServletRequest request){
-        String url="";
+        String url;
         try {
             url=QiniuCloudUtil.upload(new File(UploadFileUtils.UploadTemp(file)));
         } catch (IOException e) {
-            throw new DefinitionException(Code.UPLOAD_ERR, Tips.UPLOAD_ERR);
+            throw new CommonException(Code.UPLOAD_ERR, Tips.UPLOAD_ERR);
         }
         return new Result(url,Code.UPLOAD_OK,Tips.UPLOAD_OK);
     }

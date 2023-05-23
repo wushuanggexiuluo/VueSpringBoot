@@ -1,6 +1,6 @@
 package com.scm.myblog.service;
 
-import com.scm.myblog.entity.Category;
+import com.scm.myblog.entity.DOMAIN.Category;
 import com.scm.myblog.entity.DTO.PageDto;
 import com.scm.myblog.entity.DTO.TagSearchDto;
 import com.scm.myblog.entity.VO.Result;

@@ -1,6 +1,8 @@
 package com.scm.myblog.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.scm.myblog.entity.CORE.StatusMes;
+import com.scm.myblog.entity.DOMAIN.Link;
 import com.scm.myblog.mapper.*;
 import com.scm.myblog.entity.*;
 import com.scm.myblog.entity.DTO.LinkDto;
@@ -49,7 +51,7 @@ public class FriendLinkServiceImpl implements FriendLinkService {
             linkVos.add(link2);
         }
 
-        return new Result(linkVos, StatusMes.GET_OK.getCode(), StatusMes.GET_OK.getMes());
+        return new Result(linkVos, StatusMes.GET_OK.getCode(), StatusMes.GET_OK.getMessage());
     }
 
     @Override
@@ -72,7 +74,7 @@ public class FriendLinkServiceImpl implements FriendLinkService {
         Integer i = linkMapper.getAllLinkCount(
                 search.getLinkOwnerNickname(),
                 search.getLinkName());
-        return new Result(new PageData<>(linkPage, i), StatusMes.PAGE_OK.getCode(), StatusMes.PAGE_OK.getMes());
+        return new Result(new PageData<>(linkPage, i), StatusMes.PAGE_OK.getCode(), StatusMes.PAGE_OK.getMessage());
 
     }
 
@@ -84,7 +86,7 @@ public class FriendLinkServiceImpl implements FriendLinkService {
         } else {
             i = linkMapper.deleteById(ids[0]);
         }
-        return new Result(null, i > 0 ? StatusMes.DELETE_OK.getCode() : StatusMes.DELETE_ERR.getCode(), i > 0 ? StatusMes.DELETE_OK.getMes() : StatusMes.DELETE_ERR.getMes());
+        return new Result(null, i > 0 ? StatusMes.DELETE_OK.getCode() : StatusMes.DELETE_ERR.getCode(), i > 0 ? StatusMes.DELETE_OK.getMessage() : StatusMes.DELETE_ERR.getMessage());
 
     }
 
@@ -94,7 +96,7 @@ public class FriendLinkServiceImpl implements FriendLinkService {
         BeanUtils.copyProperties(dto, link1);
         int i = linkMapper.updateById(link1);
         return new Result(null,
-                i > 0 ? StatusMes.UPDATE_OK.getCode() : StatusMes.UPDATE_ERR.getCode(), i > 0 ? StatusMes.UPDATE_OK.getMes() : StatusMes.UPDATE_ERR.getMes());
+                i > 0 ? StatusMes.UPDATE_OK.getCode() : StatusMes.UPDATE_ERR.getCode(), i > 0 ? StatusMes.UPDATE_OK.getMessage() : StatusMes.UPDATE_ERR.getMessage());
     }
 
     /**
@@ -113,7 +115,7 @@ public class FriendLinkServiceImpl implements FriendLinkService {
             }
             link.setLinkStatus(0);
             int i = linkMapper.insert(link);
-            return new Result(null, i > 0 ? StatusMes.SAVE_OK.getCode() : StatusMes.SAVE_ERR.getCode(), i > 0 ? StatusMes.SAVE_OK.getMes() : StatusMes.SAVE_ERR.getMes());
+            return new Result(null, i > 0 ? StatusMes.SAVE_OK.getCode() : StatusMes.SAVE_ERR.getCode(), i > 0 ? StatusMes.SAVE_OK.getMessage() : StatusMes.SAVE_ERR.getMessage());
         } else {
             return new Result(null, StatusMes.SAVE_ERR.getCode(), "友链名不能重复！");
         }

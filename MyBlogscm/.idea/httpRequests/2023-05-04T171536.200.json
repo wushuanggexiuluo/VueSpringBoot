@@ -1,0 +1,48 @@
+{
+  "success": true,
+  "message": "",
+  "code": "20004",
+  "data": [
+    {
+      "childData": null,
+      "id": 2,
+      "menuName": "js框架",
+      "parentId": 1,
+      "orderBy": 1,
+      "menuPath": "21",
+      "status": 1,
+      "isDelete": 0
+    },
+    {
+      "childData": null,
+      "id": 5,
+      "menuName": "UI框架",
+      "parentId": 1,
+      "orderBy": 5,
+      "menuPath": "BootStrap",
+      "status": 1,
+      "isDelete": 0
+    },
+    {
+      "childData": null,
+      "id": 3,
+      "menuName": "vue",
+      "parentId": 2,
+      "orderBy": 2,
+      "menuPath": "132",
+      "status": 1,
+      "isDelete": 0
+    },
+    {
+      "childData": null,
+      "id": 4,
+      "menuName": "reacte",
+      "parentId": 2,
+      "orderBy": 4,
+      "menuPath": "243re",
+      "status": 1,
+      "isDelete": 0
+    }
+  ],
+  "timestamp": 1683191736748
+}

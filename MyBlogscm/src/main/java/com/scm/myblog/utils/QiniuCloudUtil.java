@@ -9,6 +9,7 @@ import com.qiniu.storage.Configuration;
 import com.qiniu.storage.Region;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,6 +22,7 @@ import java.util.UUID;
  * @author Lancer
  * @date 2022/12/08
  */
+@Slf4j
 public class QiniuCloudUtil {
 
     // 设置AK和SK
@@ -54,7 +56,7 @@ public class QiniuCloudUtil {
             // 构建token
             String token = auth.uploadToken(bucketname);
             if (StringUtils.isEmpty(token)) {
-                System.out.println("获取到token失败！");
+                log.info("获取到token失败！");
                 return "";
             }
             //构建文件名
@@ -69,12 +71,12 @@ public class QiniuCloudUtil {
             Response r = e.response;
             // 请求失败时打印的异常的信息
             e.printStackTrace();
-            System.out.println("error " + r.toString());
+            log.info("error " + r.toString());
             try {
                 // 响应的文本信息
-                System.out.println(r.bodyString());
+                log.info(r.bodyString());
             } catch (QiniuException e1) {
-                System.out.println("error " + e1.error());
+                log.info("error " + e1.error());
             }
             return "";
         }

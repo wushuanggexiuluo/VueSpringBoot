@@ -1,12 +1,13 @@
 package com.scm.myblog.aop;
 
-import com.scm.myblog.entity.Article;
-import com.scm.myblog.entity.Category;
-import com.scm.myblog.entity.Code;
-import com.scm.myblog.entity.Tips;
+import com.scm.myblog.common.ExceptionLancer.CommonException;
+import com.scm.myblog.entity.DOMAIN.Article;
+import com.scm.myblog.entity.DOMAIN.Category;
+import com.scm.myblog.entity.CORE.Code;
+import com.scm.myblog.entity.CORE.Tips;
 import com.scm.myblog.entity.VO.PageData;
 import com.scm.myblog.entity.VO.Result;
-import com.scm.myblog.exception.DefinitionException;
+
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
@@ -114,7 +115,7 @@ public class PictureProcessingAspect {
             return (Result) r;
         }
         else {
-            throw new DefinitionException(11111,"返回值异常");
+            throw new CommonException("11111","返回值异常");
         }
     }
 }

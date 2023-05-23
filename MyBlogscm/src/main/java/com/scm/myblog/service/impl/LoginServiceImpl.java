@@ -1,19 +1,18 @@
 package com.scm.myblog.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.scm.myblog.entity.StatusMes;
-import com.scm.myblog.entity.Tips;
-import com.scm.myblog.exception.DefinitionException;
+import com.scm.myblog.common.ExceptionLancer.CommonException;
+import com.scm.myblog.entity.CORE.StatusMes;
+import com.scm.myblog.entity.DOMAIN.User;
 import com.scm.myblog.mapper.*;
 import com.scm.myblog.entity.BO.LoginUser;
-import com.scm.myblog.entity.Code;
 import com.scm.myblog.entity.DTO.LoginDto;
-import com.scm.myblog.entity.User;
 import com.scm.myblog.entity.VO.Result;
 import com.scm.myblog.service.LoginService;
 import com.scm.myblog.utils.DbUtils;
 import com.scm.myblog.utils.JWTUtils;
 import com.scm.myblog.utils.RedisUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,6 +26,7 @@ import java.util.HashMap;
 import java.util.Objects;
 
 @Service
+@Slf4j
 public class LoginServiceImpl implements LoginService {
     @Autowired
     private AuthenticationManager manager;
@@ -49,11 +49,11 @@ public class LoginServiceImpl implements LoginService {
 
         //用户名不存在
         catch (InternalAuthenticationServiceException e){
-            throw new DefinitionException(StatusMes.USER_NO_REGISTER.getCode(), StatusMes.USER_NO_REGISTER.getMes());
+            throw new CommonException(StatusMes.USER_NO_REGISTER.getCode(), StatusMes.USER_NO_REGISTER.getMessage());
         }
         //密码不正确
         if (Objects.isNull(authenticate)){
-            throw new DefinitionException(StatusMes.PASSWORD_ERR.getCode(), StatusMes.PASSWORD_ERR.getMes());
+            throw new CommonException(StatusMes.PASSWORD_ERR.getCode(), StatusMes.PASSWORD_ERR.getMessage());
         }
         //正确生成token
         LoginUser l=(LoginUser)authenticate.getPrincipal();
@@ -62,7 +62,7 @@ public class LoginServiceImpl implements LoginService {
         //创建token键值对将数据返回
         HashMap<String,String> map = new HashMap<>();
         map.put("token",token);
-        System.out.println(JWTUtils.validateToken(token));
+        log.info(JWTUtils.validateToken(token));
         //登陆成功将用户数据放入redis
         RedisUtils.setDataFromRedis("login:"+UserId,l);
         Result result = new Result();
@@ -85,7 +85,7 @@ public class LoginServiceImpl implements LoginService {
      * @return {@link Result}
      */
     public Result isExistUser(LoginDto loginDto) {
-        int resultCode = 0;
+        String resultCode;
         String resultMes = "";
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(User::getUserName, loginDto.getUserName());
@@ -116,11 +116,11 @@ public class LoginServiceImpl implements LoginService {
             u.setUserPassword(DbUtils.EncodePassword(u.getUserPassword()));
             int i = userDao.insert(u);
             result.setCode(i>0?StatusMes.REGISTER_OK.getCode():StatusMes.REGISTER_ERR.getCode());
-            result.setMessage(StatusMes.REGISTER_OK.getMes());
+            result.setMessage(StatusMes.REGISTER_OK.getMessage());
         }
         else {
             result.setCode(StatusMes.USER_OK.getCode());
-            result.setMessage(StatusMes.USER_OK.getMes());
+            result.setMessage(StatusMes.USER_OK.getMessage());
         }
         return result;
     }
@@ -133,6 +133,6 @@ public class LoginServiceImpl implements LoginService {
         String id = o.getU().getUserId().toString();
         //删除redis中的id信息
         RedisUtils.deleteDataFromRedis("login:"+id);
-        return new Result(null,StatusMes.Cancel_OK.getCode(),StatusMes.Cancel_OK.getMes());
+        return new Result(null,StatusMes.Cancel_OK.getCode(),StatusMes.Cancel_OK.getMessage());
     }
 }

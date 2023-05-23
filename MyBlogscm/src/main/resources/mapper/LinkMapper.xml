@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.scm.myblog.mapper.LinkMapper">
-    <select id="getAllLinkPage" resultType="com.scm.myblog.entity.Link">
+    <select id="getAllLinkPage" resultType="com.scm.myblog.entity.DOMAIN.Link">
         SELECT *
         FROM link
         where link_owner_nickname LIKE concat('%', #{linkOwnerNickname}, '%')

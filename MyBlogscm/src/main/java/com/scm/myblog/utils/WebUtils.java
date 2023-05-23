@@ -1,5 +1,6 @@
 package com.scm.myblog.utils;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletContext;
@@ -12,6 +13,7 @@ import java.util.HashSet;
 import java.util.List;
 
 @Component
+@Slf4j
 public class WebUtils {
 
     //获取ServletContext
@@ -27,7 +29,7 @@ public class WebUtils {
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals(cookieName)) {
-                    System.out.println("Cookie中sissionid的值为：" + cookie.getValue());
+                    log.info("Cookie中sissionid的值为：" + cookie.getValue());
                     return cookie.getValue();
                 }
             }
@@ -46,7 +48,7 @@ public class WebUtils {
             List<HttpSession> httpSessions = map2.get(ipAddress);
             for (HttpSession httpSession : httpSessions) {
                 if (httpSession.getId().equals(sessionId)) {
-                    System.out.println("上线用户为Sessionid为：" + sessionId);
+                    log.info("上线用户为Sessionid为：" + sessionId);
                     return true;
                 }
             }
@@ -60,7 +62,7 @@ public class WebUtils {
         if (session != null) {
             //使session失效
             session.invalidate();
-            System.out.println("用户离线！");
+            log.info("用户离线！");
             return true;
             //失效后，需要进行的操作，List链表中需要减去，用到了Session域监听器
         }
@@ -74,7 +76,7 @@ public class WebUtils {
         Object r = request.getServletContext().getAttribute("map");
         if (r != null) {
             HashMap<String, List<HttpSession>> map = (HashMap<String, List<HttpSession>>) r;
-            System.out.println("在线人数为：" + map.size());
+            log.info("在线人数为：" + map.size());
         }
     }
 
@@ -102,8 +104,8 @@ public class WebUtils {
         HashSet<String> hashMap = new HashSet<String>();
         if (user != null) {
             hashMap = (HashSet<String>) user;
-            System.out.println(hashMap);
-            System.out.println("在线人数为：" + hashMap.size());
+            log.info(hashMap.toString());
+            log.info("在线人数为：" + hashMap.size());
         }
         return hashMap.size();
     }

@@ -1,9 +1,9 @@
 package com.scm.myblog.myvalidator;
 
-import com.scm.myblog.entity.Code;
-import com.scm.myblog.entity.Regx;
-import com.scm.myblog.entity.Tips;
-import com.scm.myblog.exception.DefinitionException;
+import com.scm.myblog.common.ExceptionLancer.CommonException;
+import com.scm.myblog.entity.CORE.Code;
+import com.scm.myblog.entity.CORE.Regx;
+import com.scm.myblog.entity.CORE.Tips;
 import com.scm.myblog.myannotation.EnumString;
 import com.scm.myblog.utils.RegxUtils;
 
@@ -27,7 +27,7 @@ public class RegxValidator implements ConstraintValidator<EnumString, String> {
             return true;
         }
         else {
-            throw new DefinitionException(Code.Parms_Err,enumString+ Tips.Parms_Err);
+            throw new CommonException(Code.Parms_Err,enumString+ Tips.Parms_Err);
         }
     }
 

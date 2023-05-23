@@ -1,7 +1,7 @@
 package com.scm.myblog.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.scm.myblog.entity.Link;
+import com.scm.myblog.entity.DOMAIN.Link;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;

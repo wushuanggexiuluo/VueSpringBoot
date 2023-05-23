@@ -1,16 +1,19 @@
 package com.scm.myblog.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.scm.myblog.entity.*;
-import com.scm.myblog.mapper.ArticleMapper;
-import com.scm.myblog.mapper.CommentMapper;
+import com.scm.myblog.entity.CORE.StatusMes;
+import com.scm.myblog.entity.DOMAIN.Article;
+import com.scm.myblog.entity.DOMAIN.Comment;
 import com.scm.myblog.entity.DTO.CommentDto;
 import com.scm.myblog.entity.DTO.CommentSearchDto;
 import com.scm.myblog.entity.DTO.PageDto;
+import com.scm.myblog.entity.DTO.UserCommentDto;
 import com.scm.myblog.entity.VO.CommentVo;
 import com.scm.myblog.entity.VO.PageData;
 import com.scm.myblog.entity.VO.Result;
-import com.scm.myblog.entity.DTO.UserCommentDto;
+import com.scm.myblog.manager.ServiceCommonManager.DeleteManager;
+import com.scm.myblog.mapper.ArticleMapper;
+import com.scm.myblog.mapper.CommentMapper;
 import com.scm.myblog.service.CommentService;
 import com.scm.myblog.utils.DbUtils;
 import org.springframework.beans.BeanUtils;
@@ -49,12 +52,12 @@ public class CommentServiceImpl implements CommentService {
         Result r=new Result();
         if (i > 0) {
             r.setData(comment.getArticleTitle());
-            r.setMessage(StatusMes.SAVE_OK.getMes());
+            r.setMessage(StatusMes.SAVE_OK.getMessage());
             r.setCode(StatusMes.SAVE_OK.getCode());
         }
         else {
             r.setData(null);
-            r.setMessage(StatusMes.SAVE_ERR.getMes());
+            r.setMessage(StatusMes.SAVE_ERR.getMessage());
             r.setCode(StatusMes.SAVE_ERR.getCode());
         }
         return r;
@@ -69,11 +72,11 @@ public class CommentServiceImpl implements CommentService {
     public Result getArticleComment(String title) {
         LambdaQueryWrapper<Article> queryWrapper = new LambdaQueryWrapper<>();
         LambdaQueryWrapper<Comment> queryWrapper2 = new LambdaQueryWrapper<>();
-        queryWrapper = queryWrapper.eq(Article::getArticleTitle, title);
-        queryWrapper.select(Article::getArticleId);
-        queryWrapper2 = queryWrapper2.eq(Comment::getCommentArticleId, articleMapper.selectOne(queryWrapper).getArticleId());
+        queryWrapper = queryWrapper.eq(Article::getArticleTitle, title).select(Article::getArticleId);
+        Long articleId = articleMapper.selectOne(queryWrapper).getArticleId();
+        queryWrapper2 = queryWrapper2.eq(Comment::getCommentArticleId, articleId);
         List<Comment> list = commentMapper.selectList(queryWrapper2);
-        return new Result(list, StatusMes.GET_OK.getCode(), StatusMes.GET_OK.getMes());
+        return new Result(list, StatusMes.GET_OK.getCode(), StatusMes.GET_OK.getMessage());
     }
 
     @Override
@@ -100,7 +103,7 @@ public class CommentServiceImpl implements CommentService {
                 search1.getName(),
                 search1.getEmail(),
                 search1.getContent());
-        return new Result(new PageData<CommentVo>(allComment,total),StatusMes.PAGE_OK.getCode(), StatusMes.PAGE_OK.getMes());
+        return new Result(new PageData<>(allComment,total),StatusMes.PAGE_OK.getCode(), StatusMes.PAGE_OK.getMessage());
     }
     @Override
     public Result removeComment(Long[] ids) {
@@ -111,18 +114,7 @@ public class CommentServiceImpl implements CommentService {
             isOk = true;
             commentMapper.deleteBatchIds(idList);
         }
-        Result result = new Result();
-        if (isOk) {
-            result.setData(list);
-            result.setCode(StatusMes.DELETE_OK.getCode());
-            result.setMessage(StatusMes.DELETE_OK.getMes());
-        }
-        else {
-            result.setData(null);
-            result.setCode(StatusMes.DELETE_ERR.getCode());
-            result.setMessage(StatusMes.DELETE_ERR.getMes());
-        }
-        return result;
+        return DeleteManager.deleteBatchIds(isOk, ids);
     }
 
     @Override
@@ -132,6 +124,6 @@ public class CommentServiceImpl implements CommentService {
         BeanUtils.copyProperties(dto,c);
         i= commentMapper.updateById(c);
         return new Result(null,i>0?StatusMes.UPDATE_OK.getCode()
-                :StatusMes.UPDATE_ERR.getCode(),i>0?StatusMes.UPDATE_OK.getMes():StatusMes.UPDATE_ERR.getMes());
+                :StatusMes.UPDATE_ERR.getCode(),i>0?StatusMes.UPDATE_OK.getMessage():StatusMes.UPDATE_ERR.getMessage());
     }
 }

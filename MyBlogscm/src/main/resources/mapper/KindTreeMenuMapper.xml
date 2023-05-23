@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scm.myblog.mapper.KindTreeMenuMapper">
+<select id="findById" parameterType="integer" resultType="com.scm.myblog.entity.DOMAIN.KindTreeMenu">
+    with recursive t1 as(
+        select a.* from kind_tree_menu a where id=#{id}
+        union all
+        select t2.* from kind_tree_menu t2 inner join t1 on t1.id = t2.parent_id
+    )
+    select * from t1
+    order by t1.parent_id
+</select>
+</mapper>

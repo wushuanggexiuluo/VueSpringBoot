@@ -1,8 +1,8 @@
 package com.scm.myblog.entity.VO;
 
-import com.scm.myblog.entity.Code;
-import com.scm.myblog.entity.Tips;
-import com.scm.myblog.exception.DefinitionException;
+import com.scm.myblog.common.ExceptionLancer.CommonException;
+import com.scm.myblog.entity.CORE.Code;
+import com.scm.myblog.entity.CORE.Tips;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -17,15 +17,15 @@ public class Result {
     @ApiModelProperty(value = "后台返回的数据")
     Object data;
     @ApiModelProperty(value = "返回状态码")
-    Integer code;
+    String code;
     @ApiModelProperty(value = "返回提示信息")
     String message;
 
     //自定义异常返回的结果
-    public static Result defineError(DefinitionException de){
+    public static Result defineError(CommonException de){
         Result result = new Result();
-        result.setCode(de.getErrorCode());
-        result.setMessage(de.getErrorMsg());
+        result.setCode(de.getErrorResult().getCode());
+        result.setMessage(de.getErrorResult().getMsg());
         result.setData(null);
         return result;
     }

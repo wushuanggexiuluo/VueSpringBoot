@@ -1,0 +1,125 @@
+{
+  "data": {
+    "total": 5,
+    "pageDataList": [
+      {
+        "category": [
+          {
+            "categoryId": 1,
+            "categoryName": "Java",
+            "categoryDescription": "Java是一门面向对象编程语言",
+            "categoryIcon": "http://cdn.forevergtt.love/mysystem/medicine/3f802b44-5ec6-42b0-92b1-9c51d01157fa"
+          },
+          {
+            "categoryId": 10,
+            "categoryName": "Spring",
+            "categoryDescription": "Spring框架是一个开放源代码的J2EE应用程序框架，由Rod Johnson发起，是针对bean的生命周期进行管理的轻量级容器（lightweight container）。 Spring解决了开发者在J2EE开发中遇到的许多常见的问题，提供了功能强大IOC、AOP及Web MVC等功能。",
+            "categoryIcon": "http://cdn.forevergtt.love/mysystem/medicine/f445d474-f035-42cc-bf02-7319e949ec3f"
+          }
+        ],
+        "articleId": 1314,
+        "articleUserId": null,
+        "articleTitle": "想玩转Java，那这篇内容不能错过",
+        "articleContent": null,
+        "articleViewCount": 1128,
+        "articleCommentCount": 6,
+        "articleDianzanCount": 14,
+        "articleUpdateTime": null,
+        "articleCreateTime": "2022-11-11T11:43:10.000+00:00",
+        "articleSummary": "若想玩转Java这些技术就必须掌握。",
+        "articleThImg": "http://cdn.forevergtt.love/mysystem/medicine/e2fc57a6-9201-4a12-a4c1-331a61897d90@th7"
+      },
+      {
+        "category": [
+          {
+            "categoryId": 1,
+            "categoryName": "Java",
+            "categoryDescription": "Java是一门面向对象编程语言",
+            "categoryIcon": "http://cdn.forevergtt.love/mysystem/medicine/3f802b44-5ec6-42b0-92b1-9c51d01157fa"
+          },
+          {
+            "categoryId": 67,
+            "categoryName": "就业",
+            "categoryDescription": " ",
+            "categoryIcon": null
+          }
+        ],
+        "articleId": 1316,
+        "articleUserId": null,
+        "articleTitle": "就业岗位只增不减！Java语言还能火多久？",
+        "articleContent": null,
+        "articleViewCount": 96,
+        "articleCommentCount": 5,
+        "articleDianzanCount": 4,
+        "articleUpdateTime": null,
+        "articleCreateTime": "2022-11-21T11:43:19.000+00:00",
+        "articleSummary": "学java是一个好选择！",
+        "articleThImg": "http://cdn.forevergtt.love/mysystem/medicine/a34abe48-e2b9-4905-9f14-104a6fa4e466@th7"
+      },
+      {
+        "category": null,
+        "articleId": 1332,
+        "articleUserId": null,
+        "articleTitle": "12月编程语言排行榜：C++首次超越JAVA进入前三",
+        "articleContent": null,
+        "articleViewCount": 10,
+        "articleCommentCount": 3,
+        "articleDianzanCount": 0,
+        "articleUpdateTime": null,
+        "articleCreateTime": "2022-12-09T05:56:18.000+00:00",
+        "articleSummary": "CirlceCI 的 2022 年软件交付状况报告显示，最流行的编程语言前三名分别是 TypeScript、JavaScript 和 Ruby，Python 排在第四位，C 和 C++ 甚至没有进入前十名。",
+        "articleThImg": "http://cdn.forevergtt.love/mysystem/medicine/8e876b21-99e8-4c93-b440-e5aad5e5377e@th7"
+      },
+      {
+        "category": [
+          {
+            "categoryId": 1,
+            "categoryName": "Java",
+            "categoryDescription": "Java是一门面向对象编程语言",
+            "categoryIcon": "http://cdn.forevergtt.love/mysystem/medicine/3f802b44-5ec6-42b0-92b1-9c51d01157fa"
+          },
+          {
+            "categoryId": 71,
+            "categoryName": "成长",
+            "categoryDescription": " ",
+            "categoryIcon": null
+          }
+        ],
+        "articleId": 1334,
+        "articleUserId": null,
+        "articleTitle": "99%的Java程序员会踩的6个坑",
+        "articleContent": null,
+        "articleViewCount": 10,
+        "articleCommentCount": 0,
+        "articleDianzanCount": 1,
+        "articleUpdateTime": null,
+        "articleCreateTime": "2022-11-16T16:33:26.000+00:00",
+        "articleSummary": "让你不再踩坑",
+        "articleThImg": "http://cdn.forevergtt.love/mysystem/medicine/36706fcb-8de7-4fb6-91e3-c8f0a394216d@th7"
+      },
+      {
+        "category": [
+          {
+            "categoryId": 87,
+            "categoryName": "XX",
+            "categoryDescription": "",
+            "categoryIcon": null
+          }
+        ],
+        "articleId": 1339,
+        "articleUserId": null,
+        "articleTitle": "HTML、CSS、JavaScript、PHP、 MySQL 的学习顺序是什么？",
+        "articleContent": null,
+        "articleViewCount": 2,
+        "articleCommentCount": 0,
+        "articleDianzanCount": 0,
+        "articleUpdateTime": null,
+        "articleCreateTime": "2022-12-03T19:14:50.000+00:00",
+        "articleSummary": "HTML、CSS、JavaScript、PHP、 MySQL 的学习顺序是什么？",
+        "articleThImg": "http://cdn.forevergtt.love/mysystem/medicine/a742efd5-413b-42f3-8774-ff2e6735253a@th7"
+      }
+    ]
+  },
+  "code": "20010",
+  "message": "页面数据获取成功"
+}

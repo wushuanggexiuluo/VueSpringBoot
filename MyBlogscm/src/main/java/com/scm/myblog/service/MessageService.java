@@ -1,9 +1,9 @@
 package com.scm.myblog.service;
 
+import com.scm.myblog.entity.DOMAIN.Message;
 import com.scm.myblog.entity.DTO.MessageDto;
 import com.scm.myblog.entity.DTO.MessageSearch;
 import com.scm.myblog.entity.DTO.PageDto;
-import com.scm.myblog.entity.Message;
 import com.scm.myblog.entity.VO.Result;
 
 import javax.servlet.http.HttpServletRequest;

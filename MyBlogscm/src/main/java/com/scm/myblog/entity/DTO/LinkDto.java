@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.URL;
 
 import javax.validation.constraints.NotBlank;
 
@@ -19,7 +20,7 @@ public class LinkDto {
     private Long linkId;
 
     @ApiModelProperty("友链地址")
-    @NotBlank(message = "友链地址不能为空")
+    @URL(message = "友链地址有误！")
     private String linkUrl;
 
     @ApiModelProperty("姓名")

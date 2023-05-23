@@ -1,11 +1,10 @@
 package com.scm.myblog.aop;
 
-import com.scm.myblog.entity.Comment;
-import com.scm.myblog.entity.StatusMes;
+import com.scm.myblog.entity.DOMAIN.Comment;
+import com.scm.myblog.entity.CORE.StatusMes;
 import com.scm.myblog.entity.VO.Result;
-import com.scm.myblog.serviceUtils.AdminBlogUtils;
-import com.scm.myblog.serviceUtils.RedisServiceBox;
-import com.scm.myblog.serviceUtils.UserBlogUtils;
+import com.scm.myblog.manager.AdminBlogManager;
+import com.scm.myblog.manager.RedisServiceBox;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -30,20 +29,20 @@ public class WebDataRecordAspect {
     public RedisTemplate<String,String> rs;
 
     //设置浏览量增加切点
-    @Pointcut("execution(public * com.scm.myblog.controller.ArticleController.getArticleDetail(..))")
+    @Pointcut("execution(public * com.scm.myblog.controller.blogcontrollers.ArticleController.getArticleDetail(..))")
     public void ViewAddPointcut() {}
     //设置文章增加切点
-    @Pointcut("execution(public * com.scm.myblog.controller.AdminArticleController.addArticles(..))")
+    @Pointcut("execution(public * com.scm.myblog.controller.admincontrollers.AdminArticleController.addArticles(..))")
     public void AddArticlePointcut() {}
     //设置文章减少切点
-    @Pointcut("execution(public * com.scm.myblog.controller.AdminArticleController.removeArticles(..))")
+    @Pointcut("execution(public * com.scm.myblog.controller.admincontrollers.AdminArticleController.removeArticles(..))")
     public void RemoveArticlePointcut() {}
     //设置评论增加切点
-    @Pointcut("execution(public * com.scm.myblog.controller.CommentController.setComment(..))")
+    @Pointcut("execution(public * com.scm.myblog.controller.blogcontrollers.CommentController.setComment(..))")
     public void AddCommentPointcut() {}
 
     //设置评论减少切点
-    @Pointcut("execution(public * com.scm.myblog.controller.AdminCommentController.removeComment(..))")
+    @Pointcut("execution(public * com.scm.myblog.controller.admincontrollers.AdminCommentController.removeComment(..))")
     public void RemoveCommentPointcut() {}
 
     /**
@@ -113,13 +112,13 @@ public class WebDataRecordAspect {
         if(data!=null){
             try{
                 List<Comment> commentList = (List<Comment>) (data);
-                List<Long> ids = AdminBlogUtils.getArticleIdByCommentList(commentList);
+                List<Long> ids = AdminBlogManager.getArticleIdByCommentList(commentList);
                 //更新Redis中的文章数据
                 RedisServiceBox.removeCommentCount(ids);
                 log.info("评论删除成功！文章id为"+ids);
             }
             catch (Exception e){
-                log.info(StatusMes.Pretend_delete.getMes());
+                log.info(StatusMes.Pretend_delete.getMessage());
             }
         }
     }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scm.myblog.mapper.DictionaryMapper">
+
+    <resultMap id="BaseResultMap" type="com.scm.myblog.entity.DOMAIN.Dictionary">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="kindCode" column="kind_code" jdbcType="INTEGER"/>
+            <result property="kindName" column="kind_name" jdbcType="VARCHAR"/>
+            <result property="keyValueMap" column="key_value_map" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="isUseCurrentKeyValue" column="is_use_current_key_value" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,kind_code,kind_name,
+        key_value_map,create_time,update_time,
+        status,is_use_current_key_value
+    </sql>
+</mapper>
