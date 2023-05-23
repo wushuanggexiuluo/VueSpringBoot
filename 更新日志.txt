@@ -1,0 +1,14 @@
+博客项目代码库大更新，主要是加入
+0 重构整个项目的排布
+1 重构异常处理模块，请查看common,可非常方便的移植
+2 新增分组校验示例，自定义校验注解，在common中，可参考完成个性化需求
+3 加入新的缓存机制，提高响应速度在com/scm/myblog/manager/CacheManage
+4 优化定时任务
+5 新增redis一键启动脚本，请修改为自用在cmd中
+6 使用4层架构新增manage层，为公用数据访问方法
+7 新增日志机制具体到年-月-日，默认的保留60天的日志，请修改src/main/resources/logback-spring.xml，使得日志存放在指定的位置
+8 新增文章自定义排序接口排序、精华排序、归档排序接口在
+com/scm/myblog/controller/admincontrollers/AdminArticleController.java
+9 新增若干工具类
+10 新增错误转发控制器
+11 新增动态定时任务管理模块（正在开发。。）
